@@ -1,4 +1,28 @@
-# Externe App opdracht (O_ExternApp)
+# Bluemera
+
+Bluemera allows you to make a photo send and then share it with another through bluetooth. This project aims to show that we are excellent students that deserve a nice grade :-).
+
+Collaboration between:
+
+- [Ramon schriks](https://github.com/ramonschriks)
+- [Iain Munro](https://github.com/iain17)
+
+## Dependencies
+
+We made use of [cocoapods](cocoapods.org) to make our lifes a little easier.
+
+- [BluetoothKit](https://cocoapods.org/pods/BluetoothKit): This simplifies chunking the data sent and received between users over low energy bluetooth.
+
+## Usage
+
+1. Run ```pod install```
+2. Open the **Bluemera.xcworkspace** file.
+3. Enjoy!
+
+Note: This project wil not work in the emulator.
+
+
+### Grading (Dutch)
 
 |   | Must                                                                          | Punten | Max. cijfer |
 |---|-------------------------------------------------------------------------------|--------|-------------|
@@ -24,3 +48,5 @@ N.b. 1 As always: Aftrek voor slordig programmeren is mogelijk. <br>
 N.b. 2 Te laat: max 2 dagen (<= 10 Okt. 24:00 gecommit) -1, > 2 dagen -2.
 
 
+## License
+Bluemera is released under the MIT License.
