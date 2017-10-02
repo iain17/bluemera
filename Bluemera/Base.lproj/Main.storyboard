@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,28 +34,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Please shoot a photo before sending it with Bluetooth. Use the button below to create a new Photo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fb6-cr-HOm">
-                                <rect key="frame" x="67" y="64" width="240" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please shoot a photo before sending it with Bluetooth. Use the button below to create a new Photo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fb6-cr-HOm">
+                                <rect key="frame" x="67" y="69" width="240" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fb6-cr-HOm" secondAttribute="height" multiplier="3:1" id="qcG-18-Aka"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrr-Zo-imf">
-                                <rect key="frame" x="16" y="587" width="114" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <size key="titleShadowOffset" width="-3" height="0.0"/>
-                                <state key="normal" title="Create">
-                                    <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="8pO-9I-IKn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-1v-hrS">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-1v-hrS">
                                 <rect key="frame" x="270" y="587" width="89" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <size key="titleShadowOffset" width="-3" height="0.0"/>
                                 <state key="normal" title="Send">
@@ -64,19 +54,41 @@
                                     <action selector="sendPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="1Ko-ZZ-RS3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65V-sR-G1E">
-                                <rect key="frame" x="0.0" y="195" width="375" height="375"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrr-Zo-imf">
+                                <rect key="frame" x="16" y="587" width="114" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <size key="titleShadowOffset" width="-3" height="0.0"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="8pO-9I-IKn"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65V-sR-G1E">
+                                <rect key="frame" x="0.0" y="157" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="65V-sR-G1E" secondAttribute="height" multiplier="1:1" id="OMK-jC-2Sh"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-wt-f26">
-                                <rect key="frame" x="87" y="157" width="200" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="65V-sR-G1E" firstAttribute="width" secondItem="sTN-Mk-vaL" secondAttribute="width" id="9Sq-lv-Ip5"/>
+                            <constraint firstItem="f6d-1v-hrS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sTN-Mk-vaL" secondAttribute="leading" constant="20" symbolic="YES" id="Gqz-QX-acR"/>
+                            <constraint firstItem="65V-sR-G1E" firstAttribute="leading" secondItem="dZt-aq-opD" secondAttribute="leading" id="KMP-9J-ZxS"/>
+                            <constraint firstItem="xrr-Zo-imf" firstAttribute="centerY" secondItem="f6d-1v-hrS" secondAttribute="centerY" id="MfB-fw-jbU"/>
+                            <constraint firstItem="65V-sR-G1E" firstAttribute="top" secondItem="fb6-cr-HOm" secondAttribute="bottom" constant="8" id="O93-ud-xbu"/>
+                            <constraint firstItem="dZt-aq-opD" firstAttribute="bottom" secondItem="f6d-1v-hrS" secondAttribute="bottom" constant="20" id="ViY-dn-uZc"/>
+                            <constraint firstItem="fb6-cr-HOm" firstAttribute="top" secondItem="dZt-aq-opD" secondAttribute="top" constant="5" id="WV2-PU-KNv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xrr-Zo-imf" secondAttribute="trailing" constant="20" symbolic="YES" id="YCp-NL-Xin"/>
+                            <constraint firstItem="xrr-Zo-imf" firstAttribute="top" secondItem="65V-sR-G1E" secondAttribute="bottom" constant="55" id="b0S-vK-Nzh"/>
+                            <constraint firstItem="xrr-Zo-imf" firstAttribute="leading" secondItem="dZt-aq-opD" secondAttribute="leading" constant="16" id="bmT-z3-cSe"/>
+                            <constraint firstItem="dZt-aq-opD" firstAttribute="bottom" secondItem="xrr-Zo-imf" secondAttribute="bottom" constant="20" id="c3g-ec-5MH"/>
+                            <constraint firstItem="dZt-aq-opD" firstAttribute="trailing" secondItem="f6d-1v-hrS" secondAttribute="trailing" constant="16" id="obR-Vx-1Qv"/>
+                            <constraint firstItem="dZt-aq-opD" firstAttribute="trailing" secondItem="65V-sR-G1E" secondAttribute="trailing" id="rUt-AW-Fd7"/>
+                            <constraint firstItem="fb6-cr-HOm" firstAttribute="centerX" secondItem="dZt-aq-opD" secondAttribute="centerX" id="v2X-Ej-YoL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dZt-aq-opD"/>
                     </view>
                     <navigationItem key="navigationItem" id="265-4r-AMF"/>

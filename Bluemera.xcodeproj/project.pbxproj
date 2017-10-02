@@ -16,6 +16,9 @@
 		5B1B91AA1F7FB6C400D4818B /* ReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B91A91F7FB6C400D4818B /* ReceiverViewController.swift */; };
 		5B1B91AC1F7FBBC600D4818B /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B91AB1F7FBBC600D4818B /* ChoiceViewController.swift */; };
 		5B1B91AE1F7FC77800D4818B /* SenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B91AD1F7FC77800D4818B /* SenderViewController.swift */; };
+		5DD5DD22E9355E5B84FEC9F7 /* Pods_BluemeraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8E978D55BC58EDD3783C96 /* Pods_BluemeraTests.framework */; };
+		85BECB84BF96EE00D414F46F /* Pods_Bluemera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917261ADDBBA9796C4B1659 /* Pods_Bluemera.framework */; };
+		F3A57A534509DCBB67A1B852 /* Pods_BluemeraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F43FFA759325F6B0630FA4 /* Pods_BluemeraUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01AEBD8AEFC8B0010B75B0B8 /* Pods-BluemeraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluemeraTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluemeraTests/Pods-BluemeraTests.release.xcconfig"; sourceTree = "<group>"; };
+		06EA3B6AA89CFE526E3B21CA /* Pods-BluemeraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluemeraTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluemeraTests/Pods-BluemeraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		404000C617239BADB9A0A49E /* Pods-Bluemera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluemera.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera.release.xcconfig"; sourceTree = "<group>"; };
+		540E249B1117C4065B61DBE6 /* Pods-Bluemera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluemera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera.debug.xcconfig"; sourceTree = "<group>"; };
 		5B1B91761F7FB65200D4818B /* Bluemera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluemera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B1B91791F7FB65200D4818B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B1B917E1F7FB65200D4818B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		5B1B91A91F7FB6C400D4818B /* ReceiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverViewController.swift; sourceTree = "<group>"; };
 		5B1B91AB1F7FBBC600D4818B /* ChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		5B1B91AD1F7FC77800D4818B /* SenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderViewController.swift; sourceTree = "<group>"; };
+		96A8844FD04B4E8D2AC8F985 /* Pods-BluemeraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluemeraUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluemeraUITests/Pods-BluemeraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4F43FFA759325F6B0630FA4 /* Pods_BluemeraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluemeraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C89810515BCEEEFFE2E10668 /* Pods-BluemeraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluemeraUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluemeraUITests/Pods-BluemeraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DA8E978D55BC58EDD3783C96 /* Pods_BluemeraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluemeraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E917261ADDBBA9796C4B1659 /* Pods_Bluemera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bluemera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BECB84BF96EE00D414F46F /* Pods_Bluemera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DD5DD22E9355E5B84FEC9F7 /* Pods_BluemeraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A57A534509DCBB67A1B852 /* Pods_BluemeraUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E99F5215187B9E777CFB98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E917261ADDBBA9796C4B1659 /* Pods_Bluemera.framework */,
+				DA8E978D55BC58EDD3783C96 /* Pods_BluemeraTests.framework */,
+				C4F43FFA759325F6B0630FA4 /* Pods_BluemeraUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B1B916D1F7FB65200D4818B = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				5B1B918D1F7FB65200D4818B /* BluemeraTests */,
 				5B1B91981F7FB65300D4818B /* BluemeraUITests */,
 				5B1B91771F7FB65200D4818B /* Products */,
+				9474667A2092DD37735D2B0C /* Pods */,
+				00E99F5215187B9E777CFB98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +166,19 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9474667A2092DD37735D2B0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				540E249B1117C4065B61DBE6 /* Pods-Bluemera.debug.xcconfig */,
+				404000C617239BADB9A0A49E /* Pods-Bluemera.release.xcconfig */,
+				06EA3B6AA89CFE526E3B21CA /* Pods-BluemeraTests.debug.xcconfig */,
+				01AEBD8AEFC8B0010B75B0B8 /* Pods-BluemeraTests.release.xcconfig */,
+				96A8844FD04B4E8D2AC8F985 /* Pods-BluemeraUITests.debug.xcconfig */,
+				C89810515BCEEEFFE2E10668 /* Pods-BluemeraUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B1B919E1F7FB65300D4818B /* Build configuration list for PBXNativeTarget "Bluemera" */;
 			buildPhases = (
+				AC79BB892CA3F4370E64EE6F /* [CP] Check Pods Manifest.lock */,
 				5B1B91721F7FB65200D4818B /* Sources */,
 				5B1B91731F7FB65200D4818B /* Frameworks */,
 				5B1B91741F7FB65200D4818B /* Resources */,
+				B74F141045207ADF5192D806 /* [CP] Embed Pods Frameworks */,
+				3F6DFFC03146D3BAA478CEFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B1B91A11F7FB65300D4818B /* Build configuration list for PBXNativeTarget "BluemeraTests" */;
 			buildPhases = (
+				C72CF693261B59A475A1542B /* [CP] Check Pods Manifest.lock */,
 				5B1B91861F7FB65200D4818B /* Sources */,
 				5B1B91871F7FB65200D4818B /* Frameworks */,
 				5B1B91881F7FB65200D4818B /* Resources */,
+				5CE38800B8640FC194E08E55 /* [CP] Embed Pods Frameworks */,
+				0598608617C6650C73E05EE4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -181,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B1B91A41F7FB65300D4818B /* Build configuration list for PBXNativeTarget "BluemeraUITests" */;
 			buildPhases = (
+				F31C598EFD20548DEFA28F10 /* [CP] Check Pods Manifest.lock */,
 				5B1B91911F7FB65300D4818B /* Sources */,
 				5B1B91921F7FB65300D4818B /* Frameworks */,
 				5B1B91931F7FB65300D4818B /* Resources */,
+				0D8986645106ACECD998424B /* [CP] Embed Pods Frameworks */,
+				C0F9B6F26463631DFC73D24B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +316,156 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0598608617C6650C73E05EE4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluemeraTests/Pods-BluemeraTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0D8986645106ACECD998424B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluemeraUITests/Pods-BluemeraUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F6DFFC03146D3BAA478CEFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CE38800B8640FC194E08E55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluemeraTests/Pods-BluemeraTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC79BB892CA3F4370E64EE6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bluemera-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B74F141045207ADF5192D806 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BluetoothKit/BluetoothKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BluetoothKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0F9B6F26463631DFC73D24B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluemeraUITests/Pods-BluemeraUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C72CF693261B59A475A1542B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BluemeraTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F31C598EFD20548DEFA28F10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BluemeraUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B1B91721F7FB65200D4818B /* Sources */ = {
@@ -440,9 +639,11 @@
 		};
 		5B1B919F1F7FB65300D4818B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 540E249B1117C4065B61DBE6 /* Pods-Bluemera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BSBW655NT;
 				INFOPLIST_FILE = Bluemera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.ica.han.Bluemera;
@@ -454,9 +655,11 @@
 		};
 		5B1B91A01F7FB65300D4818B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 404000C617239BADB9A0A49E /* Pods-Bluemera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6BSBW655NT;
 				INFOPLIST_FILE = Bluemera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.ica.han.Bluemera;
@@ -468,6 +671,7 @@
 		};
 		5B1B91A21F7FB65300D4818B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06EA3B6AA89CFE526E3B21CA /* Pods-BluemeraTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +688,7 @@
 		};
 		5B1B91A31F7FB65300D4818B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01AEBD8AEFC8B0010B75B0B8 /* Pods-BluemeraTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -500,6 +705,7 @@
 		};
 		5B1B91A51F7FB65300D4818B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96A8844FD04B4E8D2AC8F985 /* Pods-BluemeraUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -515,6 +721,7 @@
 		};
 		5B1B91A61F7FB65300D4818B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C89810515BCEEEFFE2E10668 /* Pods-BluemeraUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

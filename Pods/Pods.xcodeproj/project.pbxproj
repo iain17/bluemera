@@ -1,0 +1,952 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		018EF4256E5C53833B2BD9E18D70E3CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		086F57D07ECFC39FD057643CB90CC684 /* BKCBCentralManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A41B68B6956A7AF5CB5981BDD0F7EB /* BKCBCentralManagerDelegateProxy.swift */; };
+		0E01DE6DA6CB207669999B610894DC8C /* BKPeripheralStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649BA3EACC578BF29E661D851C50AC49 /* BKPeripheralStateMachine.swift */; };
+		15A473120D99375940FE54988CB0E445 /* BKRemoteCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D81F0A18C11EA3941F44E2021FAA866 /* BKRemoteCentral.swift */; };
+		16CB7F5DED9D549E46F53E5B21174DDD /* Pods-Bluemera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC013CCC6E209070258486740B62C3 /* Pods-Bluemera-dummy.m */; };
+		171EDD0B05F72EAFEAAA96F5C6629375 /* Pods-BluemeraUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7BEB141A70B50A7D1630F350822394 /* Pods-BluemeraUITests-dummy.m */; };
+		1A8BD1FE376FA57E1FF608E73955F41E /* BKCBPeripheralManagerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29075C32699E41FBF39694C63CAE1535 /* BKCBPeripheralManagerDelegateProxy.swift */; };
+		1B41923CBD39B3CBCD42B669A30B53E4 /* BluetoothKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F4C30253979242F953F5F9862E31A468 /* BluetoothKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		34233155903B42644F01A72FA211B0F2 /* BluetoothKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A70BAFE71858225C3C36337F8F565F9D /* BluetoothKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4331B8DD0B302459552C3F64F6A7649F /* Pods-BluemeraTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFDBE36F6D7A53C03E6EB69BFE98A96A /* Pods-BluemeraTests-dummy.m */; };
+		463AEDADB190F684E08A4E475A2ADC97 /* BKCentralStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CB4E80509211F3D8BBF06677D46C8 /* BKCentralStateMachine.swift */; };
+		4CFF9C74758FBD835A63BFF51C2DC476 /* BluetoothKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D892CB7201F10FA9DB2687782C02C /* BluetoothKit-dummy.m */; };
+		51DAE455CD7BF00FC07E8DD9B0F162FF /* Pods-Bluemera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C0177743C981CF23BE0E1D8F3C0655 /* Pods-Bluemera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5393911653F37B753068DE16806E528D /* CBLegacyManagerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB94222DC3F2678623EE449723A0EE38 /* CBLegacyManagerState.swift */; };
+		574FD91907989C8FDB625CBD97FF8B5B /* BKPeripheralConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7ECE1ED23ECDCED7A08030DCD74B82 /* BKPeripheralConfiguration.swift */; };
+		5C1BB124BF53EB3A63B9164933B810B6 /* BKSendDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0158EC7725219E81CC8AC1C22BFD8112 /* BKSendDataTask.swift */; };
+		621401C61EE6167DCFA7B734B539A291 /* BKContinuousScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48691F52CFBC46A350413DE81D99A372 /* BKContinuousScanner.swift */; };
+		6C86E921D4249D895CBBF6EEF1BE33CD /* BKCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03504B9611FD2AE3334199CC971A441 /* BKCentral.swift */; };
+		875F63125BB1C5FDF8CBDBCD755658E7 /* BKScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEF82C443C0D970F3E470DA9C4AF7 /* BKScanner.swift */; };
+		8AB63373E8526A0E30E1D3D2A67E5D2B /* BKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE647DCAC07DA21E03B8539314B988 /* BKConfiguration.swift */; };
+		96DBF6B8054EB3E3A7833EA0A4A8A2F2 /* Pods-BluemeraUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C92E3C1F884D5821A1ACA89C1AE86643 /* Pods-BluemeraUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		981C1A02CC6272CEFF7AF3DE59172C4D /* BKDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505EE6BD486F7DB07415F51E0E29B5D7 /* BKDiscovery.swift */; };
+		983CF5EC4BE68BC2042DCBA7DA99FAAA /* BKErrorDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F2AA115FE7D7565F9708F13AAA002A /* BKErrorDomain.swift */; };
+		AACD51228D6642C2DE25831809425E3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		ADB880ACF03C0E67303A4B45A6606F4A /* BKCBPeripheralDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCECB94EB51F83F3D1CCF17CE311774 /* BKCBPeripheralDelegateProxy.swift */; };
+		BAF5236160950FFF427AEFA600F84B38 /* BKPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE6784D9FE81E418A02815825885F71 /* BKPeer.swift */; };
+		CCD08E8448E7349C9FF4E9F9BFACAD2B /* BKDiscoveriesChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B81E967896C45FD352D50EC338D972 /* BKDiscoveriesChange.swift */; };
+		D12B7A0D5709FEFC59953A3757BBCE81 /* BKAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3B0AED15720809DB56AA6A552555F4 /* BKAvailability.swift */; };
+		D36232963B8E2D1C5A0ED6848905EF6C /* Pods-BluemeraTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30CD69365311E9CE2183F2D32B5D68A3 /* Pods-BluemeraTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D68C0008CAB4EC2C848FBE54461374C9 /* BKRemotePeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3003BA5324AE218137F3EFACF06ABA98 /* BKRemotePeripheral.swift */; };
+		F3F9E18AD1EE62C0644A83F0935AA225 /* BKConnectionAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487F1072C122680E8ADA36DB95C78DEC /* BKConnectionAttempt.swift */; };
+		F419B76FC74226FC726EAF73AF4DB340 /* BKConnectionPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08375129219B7944D463AF650A7FAA65 /* BKConnectionPool.swift */; };
+		F6FE2B499BCEC78B2D71743D90B147CE /* BKPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029E90FE82D000EC1A9C454EAB004CC /* BKPeripheral.swift */; };
+		FB027E0B8FEAE6DA3293ABF33857E4B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FB5A1E2DD2FC0200C076D7740009552C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		FDC40022193227D4A7FDACA57A5D5144 /* BKRemotePeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FBC5BD8A974AA7FE5F2D487D75D7B9 /* BKRemotePeer.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1856635D38367B3934D2C048A939EE45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A7D76C918049631C438BDF563EC340D;
+			remoteInfo = BluetoothKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		013ABDA3AB5ACAF3B8D62B4487D59536 /* Pods-BluemeraTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BluemeraTests-frameworks.sh"; sourceTree = "<group>"; };
+		0158EC7725219E81CC8AC1C22BFD8112 /* BKSendDataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKSendDataTask.swift; path = Source/BKSendDataTask.swift; sourceTree = "<group>"; };
+		08375129219B7944D463AF650A7FAA65 /* BKConnectionPool.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKConnectionPool.swift; path = Source/BKConnectionPool.swift; sourceTree = "<group>"; };
+		129843DEAF7EE3AC9E0545B6CFE6335B /* BluetoothKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BluetoothKit.modulemap; sourceTree = "<group>"; };
+		13ED1E34F5FBE561ED6B442F26B337F6 /* Pods-Bluemera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bluemera.debug.xcconfig"; sourceTree = "<group>"; };
+		161B76AD73A1D23F189F83BE1C759320 /* Pods-Bluemera-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Bluemera-acknowledgements.plist"; sourceTree = "<group>"; };
+		16FE7651041FD62A74FF3250C2B487D1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A40B77BD4768B2D43194BA25CF10FCF /* Pods-BluemeraUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BluemeraUITests.modulemap"; sourceTree = "<group>"; };
+		1C993AF2E2320AA405A0EDAFD9759CD8 /* BluetoothKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BluetoothKit.framework; path = BluetoothKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CA99BF68E4E2C68CDDB062A0F3274D0 /* Pods_BluemeraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BluemeraTests.framework; path = "Pods-BluemeraTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28015194DCE54A680396495C056C55FD /* Pods_BluemeraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BluemeraUITests.framework; path = "Pods-BluemeraUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29075C32699E41FBF39694C63CAE1535 /* BKCBPeripheralManagerDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKCBPeripheralManagerDelegateProxy.swift; path = Source/BKCBPeripheralManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		2D81F0A18C11EA3941F44E2021FAA866 /* BKRemoteCentral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKRemoteCentral.swift; path = Source/BKRemoteCentral.swift; sourceTree = "<group>"; };
+		3003BA5324AE218137F3EFACF06ABA98 /* BKRemotePeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKRemotePeripheral.swift; path = Source/BKRemotePeripheral.swift; sourceTree = "<group>"; };
+		30CD69365311E9CE2183F2D32B5D68A3 /* Pods-BluemeraTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BluemeraTests-umbrella.h"; sourceTree = "<group>"; };
+		4031795E26564340E32E65106EF29B3C /* Pods-Bluemera-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Bluemera-acknowledgements.markdown"; sourceTree = "<group>"; };
+		415E10F09DA419A9249206C98CDAA8E1 /* Pods-Bluemera-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bluemera-resources.sh"; sourceTree = "<group>"; };
+		4570D51B18769BBB5CC738DDC329D9C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48691F52CFBC46A350413DE81D99A372 /* BKContinuousScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKContinuousScanner.swift; path = Source/BKContinuousScanner.swift; sourceTree = "<group>"; };
+		487F1072C122680E8ADA36DB95C78DEC /* BKConnectionAttempt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKConnectionAttempt.swift; path = Source/BKConnectionAttempt.swift; sourceTree = "<group>"; };
+		4B1FA49B4CF2E5D79F749E4788A1E78F /* Pods-BluemeraTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BluemeraTests-resources.sh"; sourceTree = "<group>"; };
+		4C0CB4E80509211F3D8BBF06677D46C8 /* BKCentralStateMachine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKCentralStateMachine.swift; path = Source/BKCentralStateMachine.swift; sourceTree = "<group>"; };
+		505EE6BD486F7DB07415F51E0E29B5D7 /* BKDiscovery.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKDiscovery.swift; path = Source/BKDiscovery.swift; sourceTree = "<group>"; };
+		57F2AA115FE7D7565F9708F13AAA002A /* BKErrorDomain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKErrorDomain.swift; path = Source/BKErrorDomain.swift; sourceTree = "<group>"; };
+		61379581DBD10316AE30F0C72EECD679 /* Pods-BluemeraUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BluemeraUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6462277F9ABA060E215AD8FB08552DB8 /* Pods-BluemeraUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BluemeraUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		649BA3EACC578BF29E661D851C50AC49 /* BKPeripheralStateMachine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKPeripheralStateMachine.swift; path = Source/BKPeripheralStateMachine.swift; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66E58EAE7C29E47365E46C4769EC503E /* Pods-BluemeraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BluemeraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68FBC5BD8A974AA7FE5F2D487D75D7B9 /* BKRemotePeer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKRemotePeer.swift; path = Source/BKRemotePeer.swift; sourceTree = "<group>"; };
+		6A7BEB141A70B50A7D1630F350822394 /* Pods-BluemeraUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BluemeraUITests-dummy.m"; sourceTree = "<group>"; };
+		6B7D892CB7201F10FA9DB2687782C02C /* BluetoothKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BluetoothKit-dummy.m"; sourceTree = "<group>"; };
+		6F7F608DEC2043FFFE454016176CC969 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FE6784D9FE81E418A02815825885F71 /* BKPeer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKPeer.swift; path = Source/BKPeer.swift; sourceTree = "<group>"; };
+		76A41B68B6956A7AF5CB5981BDD0F7EB /* BKCBCentralManagerDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKCBCentralManagerDelegateProxy.swift; path = Source/BKCBCentralManagerDelegateProxy.swift; sourceTree = "<group>"; };
+		80DDEF82C443C0D970F3E470DA9C4AF7 /* BKScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKScanner.swift; path = Source/BKScanner.swift; sourceTree = "<group>"; };
+		80FC976CEABA1AD8BEA020B03282177F /* Pods_Bluemera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Bluemera.framework; path = "Pods-Bluemera.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		853D35415E95EFB035CDAB207BE78656 /* Pods-Bluemera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Bluemera.modulemap"; sourceTree = "<group>"; };
+		9174C2E00027F1714E6A16DA170DDB99 /* Pods-BluemeraTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BluemeraTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		91B13C4C363851FF00F58B15092892B8 /* Pods-BluemeraUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BluemeraUITests-frameworks.sh"; sourceTree = "<group>"; };
+		91BC5CB20575C40E8176582C2A619CE6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95DE647DCAC07DA21E03B8539314B988 /* BKConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKConfiguration.swift; path = Source/BKConfiguration.swift; sourceTree = "<group>"; };
+		965FEE3A3DB9E0E63A3B6E34758BAC8E /* Pods-BluemeraTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BluemeraTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		97A63B5A7D118C1D31768D96319BE026 /* BluetoothKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BluetoothKit-prefix.pch"; sourceTree = "<group>"; };
+		9C26BA2C3047871D44C8E463A8577CEB /* Pods-BluemeraUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BluemeraUITests-resources.sh"; sourceTree = "<group>"; };
+		A03504B9611FD2AE3334199CC971A441 /* BKCentral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKCentral.swift; path = Source/BKCentral.swift; sourceTree = "<group>"; };
+		A5C0177743C981CF23BE0E1D8F3C0655 /* Pods-Bluemera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Bluemera-umbrella.h"; sourceTree = "<group>"; };
+		A70BAFE71858225C3C36337F8F565F9D /* BluetoothKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BluetoothKit-umbrella.h"; sourceTree = "<group>"; };
+		A73E20DC314DB981AAF6876CED32BEAC /* Pods-BluemeraTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-BluemeraTests.modulemap"; sourceTree = "<group>"; };
+		AE9BCF035E3F8DF77381ADB39ED7C5E3 /* Pods-BluemeraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BluemeraTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1C984CED3423AC0B071524F5E723F1F /* Pods-BluemeraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BluemeraTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B2138616551F3CD3074BE397E45110B9 /* Pods-BluemeraUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BluemeraUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB94222DC3F2678623EE449723A0EE38 /* CBLegacyManagerState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBLegacyManagerState.swift; path = Source/CBLegacyManagerState.swift; sourceTree = "<group>"; };
+		C6C6643BD4345902B782B00307324860 /* Pods-Bluemera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Bluemera.release.xcconfig"; sourceTree = "<group>"; };
+		C92E3C1F884D5821A1ACA89C1AE86643 /* Pods-BluemeraUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BluemeraUITests-umbrella.h"; sourceTree = "<group>"; };
+		CBCECB94EB51F83F3D1CCF17CE311774 /* BKCBPeripheralDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKCBPeripheralDelegateProxy.swift; path = Source/BKCBPeripheralDelegateProxy.swift; sourceTree = "<group>"; };
+		D029E90FE82D000EC1A9C454EAB004CC /* BKPeripheral.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKPeripheral.swift; path = Source/BKPeripheral.swift; sourceTree = "<group>"; };
+		DC7ECE1ED23ECDCED7A08030DCD74B82 /* BKPeripheralConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKPeripheralConfiguration.swift; path = Source/BKPeripheralConfiguration.swift; sourceTree = "<group>"; };
+		DCDC013CCC6E209070258486740B62C3 /* Pods-Bluemera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Bluemera-dummy.m"; sourceTree = "<group>"; };
+		ED3A90852C5CCDDAA876E636FBEDAD07 /* Pods-Bluemera-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Bluemera-frameworks.sh"; sourceTree = "<group>"; };
+		F0B81E967896C45FD352D50EC338D972 /* BKDiscoveriesChange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKDiscoveriesChange.swift; path = Source/BKDiscoveriesChange.swift; sourceTree = "<group>"; };
+		F4C30253979242F953F5F9862E31A468 /* BluetoothKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BluetoothKit.h; path = Umbrella/BluetoothKit.h; sourceTree = "<group>"; };
+		F72AB4A64EC431A08E5DAC9B7B498386 /* BluetoothKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BluetoothKit.xcconfig; sourceTree = "<group>"; };
+		FE3B0AED15720809DB56AA6A552555F4 /* BKAvailability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BKAvailability.swift; path = Source/BKAvailability.swift; sourceTree = "<group>"; };
+		FFDBE36F6D7A53C03E6EB69BFE98A96A /* Pods-BluemeraTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BluemeraTests-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27D9833AF264BE090222831CFD8ABBFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB5A1E2DD2FC0200C076D7740009552C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5522EE09B5FE8D89B416E95C9C161020 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AACD51228D6642C2DE25831809425E3C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B612042271A79F58ED799446383CBF7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				018EF4256E5C53833B2BD9E18D70E3CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF82145596CE9D97659DE16E70CB001F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB027E0B8FEAE6DA3293ABF33857E4B6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F68941A5D0193D1CBF04E7F1913F7C5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB2CDF9B8E37C62B4D212988F09E8800 /* BluetoothKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4242810AF532DCB3B642371D96D49F91 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C993AF2E2320AA405A0EDAFD9759CD8 /* BluetoothKit.framework */,
+				80FC976CEABA1AD8BEA020B03282177F /* Pods_Bluemera.framework */,
+				1CA99BF68E4E2C68CDDB062A0F3274D0 /* Pods_BluemeraTests.framework */,
+				28015194DCE54A680396495C056C55FD /* Pods_BluemeraUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B512EB037F17600D164F5F154C22DCC /* Pods-Bluemera */ = {
+			isa = PBXGroup;
+			children = (
+				16FE7651041FD62A74FF3250C2B487D1 /* Info.plist */,
+				853D35415E95EFB035CDAB207BE78656 /* Pods-Bluemera.modulemap */,
+				4031795E26564340E32E65106EF29B3C /* Pods-Bluemera-acknowledgements.markdown */,
+				161B76AD73A1D23F189F83BE1C759320 /* Pods-Bluemera-acknowledgements.plist */,
+				DCDC013CCC6E209070258486740B62C3 /* Pods-Bluemera-dummy.m */,
+				ED3A90852C5CCDDAA876E636FBEDAD07 /* Pods-Bluemera-frameworks.sh */,
+				415E10F09DA419A9249206C98CDAA8E1 /* Pods-Bluemera-resources.sh */,
+				A5C0177743C981CF23BE0E1D8F3C0655 /* Pods-Bluemera-umbrella.h */,
+				13ED1E34F5FBE561ED6B442F26B337F6 /* Pods-Bluemera.debug.xcconfig */,
+				C6C6643BD4345902B782B00307324860 /* Pods-Bluemera.release.xcconfig */,
+			);
+			name = "Pods-Bluemera";
+			path = "Target Support Files/Pods-Bluemera";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				3F68941A5D0193D1CBF04E7F1913F7C5 /* Pods */,
+				4242810AF532DCB3B642371D96D49F91 /* Products */,
+				E02BD8512A28BCB7DBC4797EEC7CF452 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A2597801A41ED537B0D1A2C0A0F7F1C7 /* Pods-BluemeraTests */ = {
+			isa = PBXGroup;
+			children = (
+				6F7F608DEC2043FFFE454016176CC969 /* Info.plist */,
+				A73E20DC314DB981AAF6876CED32BEAC /* Pods-BluemeraTests.modulemap */,
+				9174C2E00027F1714E6A16DA170DDB99 /* Pods-BluemeraTests-acknowledgements.markdown */,
+				965FEE3A3DB9E0E63A3B6E34758BAC8E /* Pods-BluemeraTests-acknowledgements.plist */,
+				FFDBE36F6D7A53C03E6EB69BFE98A96A /* Pods-BluemeraTests-dummy.m */,
+				013ABDA3AB5ACAF3B8D62B4487D59536 /* Pods-BluemeraTests-frameworks.sh */,
+				4B1FA49B4CF2E5D79F749E4788A1E78F /* Pods-BluemeraTests-resources.sh */,
+				30CD69365311E9CE2183F2D32B5D68A3 /* Pods-BluemeraTests-umbrella.h */,
+				B1C984CED3423AC0B071524F5E723F1F /* Pods-BluemeraTests.debug.xcconfig */,
+				AE9BCF035E3F8DF77381ADB39ED7C5E3 /* Pods-BluemeraTests.release.xcconfig */,
+			);
+			name = "Pods-BluemeraTests";
+			path = "Target Support Files/Pods-BluemeraTests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD7080478D6877C11162D4A2FB45C756 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				129843DEAF7EE3AC9E0545B6CFE6335B /* BluetoothKit.modulemap */,
+				F72AB4A64EC431A08E5DAC9B7B498386 /* BluetoothKit.xcconfig */,
+				6B7D892CB7201F10FA9DB2687782C02C /* BluetoothKit-dummy.m */,
+				97A63B5A7D118C1D31768D96319BE026 /* BluetoothKit-prefix.pch */,
+				A70BAFE71858225C3C36337F8F565F9D /* BluetoothKit-umbrella.h */,
+				91BC5CB20575C40E8176582C2A619CE6 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BluetoothKit";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E02BD8512A28BCB7DBC4797EEC7CF452 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B512EB037F17600D164F5F154C22DCC /* Pods-Bluemera */,
+				A2597801A41ED537B0D1A2C0A0F7F1C7 /* Pods-BluemeraTests */,
+				FF514675406A43C8E11C746057C81039 /* Pods-BluemeraUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EB2CDF9B8E37C62B4D212988F09E8800 /* BluetoothKit */ = {
+			isa = PBXGroup;
+			children = (
+				FE3B0AED15720809DB56AA6A552555F4 /* BKAvailability.swift */,
+				76A41B68B6956A7AF5CB5981BDD0F7EB /* BKCBCentralManagerDelegateProxy.swift */,
+				CBCECB94EB51F83F3D1CCF17CE311774 /* BKCBPeripheralDelegateProxy.swift */,
+				29075C32699E41FBF39694C63CAE1535 /* BKCBPeripheralManagerDelegateProxy.swift */,
+				A03504B9611FD2AE3334199CC971A441 /* BKCentral.swift */,
+				4C0CB4E80509211F3D8BBF06677D46C8 /* BKCentralStateMachine.swift */,
+				95DE647DCAC07DA21E03B8539314B988 /* BKConfiguration.swift */,
+				487F1072C122680E8ADA36DB95C78DEC /* BKConnectionAttempt.swift */,
+				08375129219B7944D463AF650A7FAA65 /* BKConnectionPool.swift */,
+				48691F52CFBC46A350413DE81D99A372 /* BKContinuousScanner.swift */,
+				F0B81E967896C45FD352D50EC338D972 /* BKDiscoveriesChange.swift */,
+				505EE6BD486F7DB07415F51E0E29B5D7 /* BKDiscovery.swift */,
+				57F2AA115FE7D7565F9708F13AAA002A /* BKErrorDomain.swift */,
+				6FE6784D9FE81E418A02815825885F71 /* BKPeer.swift */,
+				D029E90FE82D000EC1A9C454EAB004CC /* BKPeripheral.swift */,
+				DC7ECE1ED23ECDCED7A08030DCD74B82 /* BKPeripheralConfiguration.swift */,
+				649BA3EACC578BF29E661D851C50AC49 /* BKPeripheralStateMachine.swift */,
+				2D81F0A18C11EA3941F44E2021FAA866 /* BKRemoteCentral.swift */,
+				68FBC5BD8A974AA7FE5F2D487D75D7B9 /* BKRemotePeer.swift */,
+				3003BA5324AE218137F3EFACF06ABA98 /* BKRemotePeripheral.swift */,
+				80DDEF82C443C0D970F3E470DA9C4AF7 /* BKScanner.swift */,
+				0158EC7725219E81CC8AC1C22BFD8112 /* BKSendDataTask.swift */,
+				F4C30253979242F953F5F9862E31A468 /* BluetoothKit.h */,
+				BB94222DC3F2678623EE449723A0EE38 /* CBLegacyManagerState.swift */,
+				CD7080478D6877C11162D4A2FB45C756 /* Support Files */,
+			);
+			name = BluetoothKit;
+			path = BluetoothKit;
+			sourceTree = "<group>";
+		};
+		FF514675406A43C8E11C746057C81039 /* Pods-BluemeraUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4570D51B18769BBB5CC738DDC329D9C7 /* Info.plist */,
+				1A40B77BD4768B2D43194BA25CF10FCF /* Pods-BluemeraUITests.modulemap */,
+				61379581DBD10316AE30F0C72EECD679 /* Pods-BluemeraUITests-acknowledgements.markdown */,
+				6462277F9ABA060E215AD8FB08552DB8 /* Pods-BluemeraUITests-acknowledgements.plist */,
+				6A7BEB141A70B50A7D1630F350822394 /* Pods-BluemeraUITests-dummy.m */,
+				91B13C4C363851FF00F58B15092892B8 /* Pods-BluemeraUITests-frameworks.sh */,
+				9C26BA2C3047871D44C8E463A8577CEB /* Pods-BluemeraUITests-resources.sh */,
+				C92E3C1F884D5821A1ACA89C1AE86643 /* Pods-BluemeraUITests-umbrella.h */,
+				B2138616551F3CD3074BE397E45110B9 /* Pods-BluemeraUITests.debug.xcconfig */,
+				66E58EAE7C29E47365E46C4769EC503E /* Pods-BluemeraUITests.release.xcconfig */,
+			);
+			name = "Pods-BluemeraUITests";
+			path = "Target Support Files/Pods-BluemeraUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		173E3ED47B6FE9113A41BEFC1CFA8BCF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96DBF6B8054EB3E3A7833EA0A4A8A2F2 /* Pods-BluemeraUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18CCDF09956B8F8F8224A7F1440BB491 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34233155903B42644F01A72FA211B0F2 /* BluetoothKit-umbrella.h in Headers */,
+				1B41923CBD39B3CBCD42B669A30B53E4 /* BluetoothKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		598814DCC1372CF4355AB0B7D29E666C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D36232963B8E2D1C5A0ED6848905EF6C /* Pods-BluemeraTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD80D61676CB4E10EB486DC565924B0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51DAE455CD7BF00FC07E8DD9B0F162FF /* Pods-Bluemera-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0DDF4EF82E9A104192056BE68A771A9A /* Pods-BluemeraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD2A567C78445B721C7820AB53737258 /* Build configuration list for PBXNativeTarget "Pods-BluemeraTests" */;
+			buildPhases = (
+				4799A8A1FA2DB55BDEAA6B688C017AB4 /* Sources */,
+				27D9833AF264BE090222831CFD8ABBFC /* Frameworks */,
+				598814DCC1372CF4355AB0B7D29E666C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BluemeraTests";
+			productName = "Pods-BluemeraTests";
+			productReference = 1CA99BF68E4E2C68CDDB062A0F3274D0 /* Pods_BluemeraTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		20AE4FADE48C48C3EECB750597D71D65 /* Pods-BluemeraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F6EEB6E627C94B3902A182B4C572786 /* Build configuration list for PBXNativeTarget "Pods-BluemeraUITests" */;
+			buildPhases = (
+				699C78F3911D1602B71EAD3ECFD17432 /* Sources */,
+				5522EE09B5FE8D89B416E95C9C161020 /* Frameworks */,
+				173E3ED47B6FE9113A41BEFC1CFA8BCF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BluemeraUITests";
+			productName = "Pods-BluemeraUITests";
+			productReference = 28015194DCE54A680396495C056C55FD /* Pods_BluemeraUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5281AF5E8B011DAC34043874C599397B /* Pods-Bluemera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 785C827A0748035ED16684823CC173EA /* Build configuration list for PBXNativeTarget "Pods-Bluemera" */;
+			buildPhases = (
+				702FB3535E6C3703EA06B4F34DEC6253 /* Sources */,
+				B612042271A79F58ED799446383CBF7C /* Frameworks */,
+				CD80D61676CB4E10EB486DC565924B0A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				011C1818878A5E4DCF1CC343F2EF0611 /* PBXTargetDependency */,
+			);
+			name = "Pods-Bluemera";
+			productName = "Pods-Bluemera";
+			productReference = 80FC976CEABA1AD8BEA020B03282177F /* Pods_Bluemera.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6A7D76C918049631C438BDF563EC340D /* BluetoothKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7F9D76C0AA5ED7CE12B1C18254D184E /* Build configuration list for PBXNativeTarget "BluetoothKit" */;
+			buildPhases = (
+				E04F49014EB01E4673768AD1B4BD6B8A /* Sources */,
+				CF82145596CE9D97659DE16E70CB001F /* Frameworks */,
+				18CCDF09956B8F8F8224A7F1440BB491 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BluetoothKit;
+			productName = BluetoothKit;
+			productReference = 1C993AF2E2320AA405A0EDAFD9759CD8 /* BluetoothKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 4242810AF532DCB3B642371D96D49F91 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6A7D76C918049631C438BDF563EC340D /* BluetoothKit */,
+				5281AF5E8B011DAC34043874C599397B /* Pods-Bluemera */,
+				0DDF4EF82E9A104192056BE68A771A9A /* Pods-BluemeraTests */,
+				20AE4FADE48C48C3EECB750597D71D65 /* Pods-BluemeraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4799A8A1FA2DB55BDEAA6B688C017AB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4331B8DD0B302459552C3F64F6A7649F /* Pods-BluemeraTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		699C78F3911D1602B71EAD3ECFD17432 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				171EDD0B05F72EAFEAAA96F5C6629375 /* Pods-BluemeraUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		702FB3535E6C3703EA06B4F34DEC6253 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16CB7F5DED9D549E46F53E5B21174DDD /* Pods-Bluemera-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E04F49014EB01E4673768AD1B4BD6B8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D12B7A0D5709FEFC59953A3757BBCE81 /* BKAvailability.swift in Sources */,
+				086F57D07ECFC39FD057643CB90CC684 /* BKCBCentralManagerDelegateProxy.swift in Sources */,
+				ADB880ACF03C0E67303A4B45A6606F4A /* BKCBPeripheralDelegateProxy.swift in Sources */,
+				1A8BD1FE376FA57E1FF608E73955F41E /* BKCBPeripheralManagerDelegateProxy.swift in Sources */,
+				6C86E921D4249D895CBBF6EEF1BE33CD /* BKCentral.swift in Sources */,
+				463AEDADB190F684E08A4E475A2ADC97 /* BKCentralStateMachine.swift in Sources */,
+				8AB63373E8526A0E30E1D3D2A67E5D2B /* BKConfiguration.swift in Sources */,
+				F3F9E18AD1EE62C0644A83F0935AA225 /* BKConnectionAttempt.swift in Sources */,
+				F419B76FC74226FC726EAF73AF4DB340 /* BKConnectionPool.swift in Sources */,
+				621401C61EE6167DCFA7B734B539A291 /* BKContinuousScanner.swift in Sources */,
+				CCD08E8448E7349C9FF4E9F9BFACAD2B /* BKDiscoveriesChange.swift in Sources */,
+				981C1A02CC6272CEFF7AF3DE59172C4D /* BKDiscovery.swift in Sources */,
+				983CF5EC4BE68BC2042DCBA7DA99FAAA /* BKErrorDomain.swift in Sources */,
+				BAF5236160950FFF427AEFA600F84B38 /* BKPeer.swift in Sources */,
+				F6FE2B499BCEC78B2D71743D90B147CE /* BKPeripheral.swift in Sources */,
+				574FD91907989C8FDB625CBD97FF8B5B /* BKPeripheralConfiguration.swift in Sources */,
+				0E01DE6DA6CB207669999B610894DC8C /* BKPeripheralStateMachine.swift in Sources */,
+				15A473120D99375940FE54988CB0E445 /* BKRemoteCentral.swift in Sources */,
+				FDC40022193227D4A7FDACA57A5D5144 /* BKRemotePeer.swift in Sources */,
+				D68C0008CAB4EC2C848FBE54461374C9 /* BKRemotePeripheral.swift in Sources */,
+				875F63125BB1C5FDF8CBDBCD755658E7 /* BKScanner.swift in Sources */,
+				5C1BB124BF53EB3A63B9164933B810B6 /* BKSendDataTask.swift in Sources */,
+				4CFF9C74758FBD835A63BFF51C2DC476 /* BluetoothKit-dummy.m in Sources */,
+				5393911653F37B753068DE16806E528D /* CBLegacyManagerState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		011C1818878A5E4DCF1CC343F2EF0611 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BluetoothKit;
+			target = 6A7D76C918049631C438BDF563EC340D /* BluetoothKit */;
+			targetProxy = 1856635D38367B3934D2C048A939EE45 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0535C53F18EAAF66FD0F065B376295C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1C984CED3423AC0B071524F5E723F1F /* Pods-BluemeraTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BluemeraTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BluemeraTests/Pods-BluemeraTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BluemeraTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		12C4B864767C59600DBFA238F1E2F8BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2A721E23A850339BA2CF0EB260E6B894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F72AB4A64EC431A08E5DAC9B7B498386 /* BluetoothKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BluetoothKit/BluetoothKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BluetoothKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BluetoothKit/BluetoothKit.modulemap";
+				PRODUCT_NAME = BluetoothKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2DFA9623F7B69B7B648F9BA189551E97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13ED1E34F5FBE561ED6B442F26B337F6 /* Pods-Bluemera.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Bluemera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bluemera/Pods-Bluemera.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Bluemera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2E9C057ED6EC7615C6AC67FA9F4AF686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F72AB4A64EC431A08E5DAC9B7B498386 /* BluetoothKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BluetoothKit/BluetoothKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BluetoothKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BluetoothKit/BluetoothKit.modulemap";
+				PRODUCT_NAME = BluetoothKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59F0302F2371FCC6B73EF0A418D40734 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		62B803CFFC7D9141EF9306C2F9D9F80E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2138616551F3CD3074BE397E45110B9 /* Pods-BluemeraUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BluemeraUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BluemeraUITests/Pods-BluemeraUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BluemeraUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6F7FCD63EA280615E1EF7552A4B1483F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE9BCF035E3F8DF77381ADB39ED7C5E3 /* Pods-BluemeraTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BluemeraTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BluemeraTests/Pods-BluemeraTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BluemeraTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8382C78DB669B0C53E5E97F82ADCDE90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6C6643BD4345902B782B00307324860 /* Pods-Bluemera.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Bluemera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Bluemera/Pods-Bluemera.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Bluemera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		95BCBBEE30266DC2FDF0F3A877568BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66E58EAE7C29E47365E46C4769EC503E /* Pods-BluemeraUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BluemeraUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BluemeraUITests/Pods-BluemeraUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_BluemeraUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59F0302F2371FCC6B73EF0A418D40734 /* Debug */,
+				12C4B864767C59600DBFA238F1E2F8BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		785C827A0748035ED16684823CC173EA /* Build configuration list for PBXNativeTarget "Pods-Bluemera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DFA9623F7B69B7B648F9BA189551E97 /* Debug */,
+				8382C78DB669B0C53E5E97F82ADCDE90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F6EEB6E627C94B3902A182B4C572786 /* Build configuration list for PBXNativeTarget "Pods-BluemeraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62B803CFFC7D9141EF9306C2F9D9F80E /* Debug */,
+				95BCBBEE30266DC2FDF0F3A877568BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7F9D76C0AA5ED7CE12B1C18254D184E /* Build configuration list for PBXNativeTarget "BluetoothKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E9C057ED6EC7615C6AC67FA9F4AF686 /* Debug */,
+				2A721E23A850339BA2CF0EB260E6B894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD2A567C78445B721C7820AB53737258 /* Build configuration list for PBXNativeTarget "Pods-BluemeraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0535C53F18EAAF66FD0F065B376295C0 /* Debug */,
+				6F7FCD63EA280615E1EF7552A4B1483F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

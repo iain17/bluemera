@@ -48,7 +48,6 @@ class SenderViewController: UIViewController, UINavigationControllerDelegate, UI
         get {
             return imageView?.image
         }
-    
         set {
             imageView.image = newValue
             imageView.sizeToFit()
