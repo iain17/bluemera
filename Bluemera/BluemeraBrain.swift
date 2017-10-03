@@ -61,13 +61,26 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
         self.boast()
     }
     
+    //Returns the current inventoryIndex in data
+    private func getInventory() throws -> Data {
+        let inventory = Pb.Inventory.Builder()
+        inventory.hash = self.inventoryIndex
+        let message = Pb.Message.Builder()
+        message.inventory = try inventory.build()
+        return try message.build().data()
+    }
+    
     func boast() {
-        for peer in self.connected {
-            print("boasting...")
-            let data = "Hello beloved central!".data(using: String.Encoding.utf8)
-            peer.sendData(data!) { data, remoteCentral, error in
-                print(error)
+        do {
+            let inventory = try getInventory()
+            for peer in self.connected {
+                print("boasting...")
+                peer.sendData(inventory) { data, remoteCentral, error in
+                    print(error)
+                }
             }
+        } catch let err {
+            print(err)
         }
     }
     
@@ -137,9 +150,23 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
     //MARK: Shared
     func received(_ remotePeer: Peer, data: Data) {
         print("We received a message \(data) from \(remotePeer)")
-        let data = "Hello beloved central/peripheral we don't care :D".data(using: String.Encoding.utf8)
-        remotePeer.sendData(data!) { data, remoteCentral, error in
-            print(error)
+        do {
+            let message = try Pb.Message.parseFrom(data: data)
+            
+            if message.hasInventory {
+                let inventory = message.inventory
+                print(inventory?.hash)
+            }
+            
+            if message.hasInventoryItem {
+                let inventoryItem = message.inventoryItem
+                print(inventoryItem?.data)
+            }
+            
+            print("none of em???")
+            
+        } catch let err {
+            print(err)
         }
     }
 }
