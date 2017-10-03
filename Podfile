@@ -7,7 +7,8 @@ target 'Bluemera' do
 
   pod 'BluetoothKit', '~> 0.4'
   pod 'Toaster', '~> 2.1.0'
-
+  pod 'ProtocolBuffers-Swift', :git => 'https://github.com/alexeyxo/protobuf-swift.git', :branch => 'swift4'
+  
   target 'BluemeraTests' do
     inherit! :search_paths
     # Pods for testing

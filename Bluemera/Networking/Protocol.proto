@@ -1,0 +1,19 @@
+syntax = "proto3";
+package pb;
+option optimize_for = LITE_RUNTIME;
+
+message InventoryItem {
+    string from = 1;
+    string data = 2;
+}
+message Inventory {
+    repeated string hash = 1;
+}
+
+message Message {
+    int64 version = 1;
+    oneof msg {
+        InventoryItem inventoryItem = 2;
+        Inventory inventory = 3;
+    }
+}
