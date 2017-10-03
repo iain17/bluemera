@@ -404,10 +404,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BluetoothKit/BluetoothKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BluetoothKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -643,7 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6BSBW655NT;
+				DEVELOPMENT_TEAM = 84VM5F8YU8;
 				INFOPLIST_FILE = Bluemera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.ica.han.Bluemera;
@@ -659,7 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6BSBW655NT;
+				DEVELOPMENT_TEAM = 84VM5F8YU8;
 				INFOPLIST_FILE = Bluemera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.ica.han.Bluemera;

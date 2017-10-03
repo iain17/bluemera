@@ -6,6 +6,7 @@ target 'Bluemera' do
   use_frameworks!
 
   pod 'BluetoothKit', '~> 0.4'
+  pod 'Toaster', '~> 2.1.0'
 
   target 'BluemeraTests' do
     inherit! :search_paths
@@ -16,5 +17,4 @@ target 'Bluemera' do
     inherit! :search_paths
     # Pods for testing
   end
-
 end
