@@ -29,11 +29,11 @@ internal protocol BKConnectionPoolDelegate: class {
     func connectionPool(_ connectionPool: BKConnectionPool, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral)
 }
 
-internal class BKConnectionPool: BKCBCentralManagerConnectionDelegate {
+public class BKConnectionPool: BKCBCentralManagerConnectionDelegate {
 
     // MARK: Enums
 
-    internal enum BKError: Error {
+    public enum BKError: Error {
         case noCentralManagerSet
         case alreadyConnected
         case alreadyConnecting
