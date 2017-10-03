@@ -13,7 +13,7 @@ import BluetoothKit
 //This method iterates through each peer and boasts about how many hashes it has.
 //If then one of these peers like what he has to offer. He'll ask him to send him the inventoryItem of that hash.
 //Easy peasy, lemon squeezy.
-class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObserver, BKRemotePeerDelegate {
+class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObserver, PeerDelegate {
     //BlueMeraBrain UUIDs
     let dataServiceUUID = UUID(uuidString: "3442AE8B-9C9B-4562-B299-4D7307231EDD")!
     let dataServiceCharacteristicUUID = UUID(uuidString: "C3D0261D-4084-40A1-A3A0-D7C9F946AF83")!
@@ -24,7 +24,7 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
     var inventory = [String:Inventory]()//hash, inventory
     var inventoryIndex = [String]()//position (row), hash.
     
-    open var connected = [BKRemoteCentral]()
+    open var connected = [Peer]()
     private let delegate: BluemeraBrainDelegate
     
     init(delegate: BluemeraBrainDelegate) throws {
@@ -65,7 +65,7 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
         for peer in self.connected {
             print("boasting...")
             let data = "Hello beloved central!".data(using: String.Encoding.utf8)
-            self.peripheral.sendData(data!, toRemotePeer: peer) { data, remoteCentral, error in
+            peer.sendData(data!) { data, remoteCentral, error in
                 print(error)
             }
         }
@@ -91,16 +91,12 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
         for discovery in discoveries {
             self.central.connect(remotePeripheral: discovery.remotePeripheral) { remotePeripheral, error in
                 if error != nil {
-                    print(error)
+                    //print(error)
                     return
                 }
-                remotePeripheral.delegate = self
+                self.central(self.central, remotePeripheralDidConnect: remotePeripheral)
             }
         }
-    }
-    
-    internal func central(_ central: BKCentral, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral) {
-        print("central::disconnected")
     }
     
     internal func availabilityObserver(_ availabilityObservable: BKAvailabilityObservable, availabilityDidChange availability: BKAvailability) {
@@ -116,27 +112,34 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
         print("c")
     }
     
-    func remotePeer(_ remotePeer: BKRemotePeer, didSendArbitraryData data: Data) {
-        print("received data.... \(data)")
-        let data = "Hello beloved peer!".data(using: String.Encoding.utf8)
-        self.central.sendData(data!, toRemotePeer: remotePeer) { data, remoteCentral, error in
-            print(error)
-        }
-        self.peripheral.sendData(data!, toRemotePeer: remotePeer) { data, remoteCentral, error in
-            print(error)
-        }
+    internal func central(_ central: BKCentral, remotePeripheralDidConnect remotePeripheral: BKRemotePeripheral) {
+        print("central::connected")
+        self.connected.append(Peer(peer: central, remotePeer: remotePeripheral, delegate: self))
+    }
+    
+    internal func central(_ central: BKCentral, remotePeripheralDidDisconnect remotePeripheral: BKRemotePeripheral) {
+        print("central::disconnected")
+        self.connected = self.connected.filter { $0.remotePeer != remotePeripheral }
     }
     
     //MARK: Peripheral
     
     internal func peripheral(_ peripheral: BKPeripheral, remoteCentralDidConnect remoteCentral: BKRemoteCentral) {
         print("peripheral::connected")
-        remoteCentral.delegate = self
-        self.connected.append(remoteCentral)
+        self.connected.append(Peer(peer: peripheral, remotePeer: remoteCentral, delegate: self))
     }
     
     internal func peripheral(_ peripheral: BKPeripheral, remoteCentralDidDisconnect remoteCentral: BKRemoteCentral) {
         print("peripheral::disconnected")
-        self.connected = self.connected.filter { $0 != remoteCentral }
+        self.connected = self.connected.filter { $0.remotePeer != remoteCentral }
+    }
+    
+    //MARK: Shared
+    func received(_ remotePeer: Peer, data: Data) {
+        print("We received a message \(data) from \(remotePeer)")
+        let data = "Hello beloved central/peripheral we don't care :D".data(using: String.Encoding.utf8)
+        remotePeer.sendData(data!) { data, remoteCentral, error in
+            print(error)
+        }
     }
 }
