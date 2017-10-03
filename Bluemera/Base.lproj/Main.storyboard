@@ -34,8 +34,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please shoot a photo before sending it with Bluetooth. Use the button below to create a new Photo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fb6-cr-HOm">
-                                <rect key="frame" x="67" y="69" width="240" height="80"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Please shoot a photo before sending it with Bluetooth. Use the button below to create a new Photo!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fb6-cr-HOm">
+                                <rect key="frame" x="67.5" y="69" width="240" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fb6-cr-HOm" secondAttribute="height" multiplier="3:1" id="qcG-18-Aka"/>
@@ -43,49 +43,58 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-1v-hrS">
-                                <rect key="frame" x="270" y="587" width="89" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <size key="titleShadowOffset" width="-3" height="0.0"/>
-                                <state key="normal" title="Send">
-                                    <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sendPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="1Ko-ZZ-RS3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrr-Zo-imf">
-                                <rect key="frame" x="16" y="587" width="114" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <size key="titleShadowOffset" width="-3" height="0.0"/>
-                                <state key="normal" title="Create">
-                                    <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="8pO-9I-IKn"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65V-sR-G1E">
-                                <rect key="frame" x="0.0" y="157" width="375" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65V-sR-G1E">
+                                <rect key="frame" x="0.0" y="204" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="65V-sR-G1E" secondAttribute="height" multiplier="1:1" id="OMK-jC-2Sh"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mvc-AR-Cte">
+                                <rect key="frame" x="12" y="587" width="350" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrr-Zo-imf">
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <size key="titleShadowOffset" width="-3" height="0.0"/>
+                                        <state key="normal" title="Create">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="8pO-9I-IKn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZE-fS-YFa">
+                                        <rect key="frame" x="118" y="0.0" width="114" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <size key="titleShadowOffset" width="-3" height="0.0"/>
+                                        <state key="normal" title="Load">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loadPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="cJV-kT-1kU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6d-1v-hrS">
+                                        <rect key="frame" x="236" y="0.0" width="114" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <size key="titleShadowOffset" width="-3" height="0.0"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendPhoto:" destination="wR8-fB-nwu" eventType="touchUpInside" id="1Ko-ZZ-RS3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="65V-sR-G1E" firstAttribute="width" secondItem="sTN-Mk-vaL" secondAttribute="width" id="9Sq-lv-Ip5"/>
-                            <constraint firstItem="f6d-1v-hrS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sTN-Mk-vaL" secondAttribute="leading" constant="20" symbolic="YES" id="Gqz-QX-acR"/>
                             <constraint firstItem="65V-sR-G1E" firstAttribute="leading" secondItem="dZt-aq-opD" secondAttribute="leading" id="KMP-9J-ZxS"/>
-                            <constraint firstItem="xrr-Zo-imf" firstAttribute="centerY" secondItem="f6d-1v-hrS" secondAttribute="centerY" id="MfB-fw-jbU"/>
                             <constraint firstItem="65V-sR-G1E" firstAttribute="top" secondItem="fb6-cr-HOm" secondAttribute="bottom" constant="8" id="O93-ud-xbu"/>
-                            <constraint firstItem="dZt-aq-opD" firstAttribute="bottom" secondItem="f6d-1v-hrS" secondAttribute="bottom" constant="20" id="ViY-dn-uZc"/>
                             <constraint firstItem="fb6-cr-HOm" firstAttribute="top" secondItem="dZt-aq-opD" secondAttribute="top" constant="5" id="WV2-PU-KNv"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xrr-Zo-imf" secondAttribute="trailing" constant="20" symbolic="YES" id="YCp-NL-Xin"/>
-                            <constraint firstItem="xrr-Zo-imf" firstAttribute="top" secondItem="65V-sR-G1E" secondAttribute="bottom" constant="55" id="b0S-vK-Nzh"/>
-                            <constraint firstItem="xrr-Zo-imf" firstAttribute="leading" secondItem="dZt-aq-opD" secondAttribute="leading" constant="16" id="bmT-z3-cSe"/>
-                            <constraint firstItem="dZt-aq-opD" firstAttribute="bottom" secondItem="xrr-Zo-imf" secondAttribute="bottom" constant="20" id="c3g-ec-5MH"/>
-                            <constraint firstItem="dZt-aq-opD" firstAttribute="trailing" secondItem="f6d-1v-hrS" secondAttribute="trailing" constant="16" id="obR-Vx-1Qv"/>
                             <constraint firstItem="dZt-aq-opD" firstAttribute="trailing" secondItem="65V-sR-G1E" secondAttribute="trailing" id="rUt-AW-Fd7"/>
                             <constraint firstItem="fb6-cr-HOm" firstAttribute="centerX" secondItem="dZt-aq-opD" secondAttribute="centerX" id="v2X-Ej-YoL"/>
                         </constraints>

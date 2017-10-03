@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import Toaster
 
 class SenderViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBAction func createPhoto(_ sender: UIButton) { loadImage(.camera, message: "Camera is not available") }
+    @IBAction func loadPhoto(_ sender: UIButton) { loadImage(.photoLibrary, message: "Cannot open Photolibrary at this moment") }
     
-    private var imagePicker: UIImagePickerController!
+    private var imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         disableButton(sendButton)
+        imagePicker.delegate = self
     }
     
-    @IBAction func createPhoto(_ sender: UIButton) {
-        imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+    private func loadImage(_ sourceType: UIImagePickerControllerSourceType, message msg: String) {
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            imagePicker.sourceType = sourceType
+            present(imagePicker, animated: true, completion: nil)
+        } else { Toast(text: msg).show() }
     }
     
     @IBAction func sendPhoto(_ sender: UIButton) {
@@ -33,6 +37,7 @@ class SenderViewController: UIViewController, UINavigationControllerDelegate, UI
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
     
     private func disableButton(_ button: UIButton?) {
