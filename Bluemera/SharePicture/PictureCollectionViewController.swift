@@ -46,7 +46,13 @@ class PictureCollectionViewController: UICollectionViewController, BluemeraBrain
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            self.brain?.addToInventory(data: UIImagePNGRepresentation(image)!)
+            if let resizedImage = image.resizeImage(newWidth: CGFloat(150)) {
+                self.brain?.addToInventory(data: UIImageJPEGRepresentation(resizedImage, 0.5)!)
+            } else {
+                print("could not resize...")
+            }
+        } else {
+            print("Could not get the image")
         }
         dismiss(animated: true, completion: nil)
     }

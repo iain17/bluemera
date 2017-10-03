@@ -150,23 +150,67 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
     //MARK: Shared
     func received(_ remotePeer: Peer, data: Data) {
         print("We received a message \(data) from \(remotePeer)")
+        var _responses: [Data]?
         do {
             let message = try Pb.Message.parseFrom(data: data)
-            
-            if message.hasInventory {
-                let inventory = message.inventory
-                print(inventory?.hash)
+           
+            if let inventory = message.inventory {
+                print("Received inventory listing")
+                _responses = try requestMissingInventoryItems(available: inventory.hash)
             }
             
-            if message.hasInventoryItem {
-                let inventoryItem = message.inventoryItem
-                print(inventoryItem?.data)
+            if let inventoryReq = message.inventoryRequest {
+                print("Received a inventory request")
+                _responses = try sendInventoryItem(hashes: inventoryReq.hash)
             }
             
-            print("none of em???")
+            if let inventoryRes = message.inventoryResponse {
+                print("Received a inventory response")
+                //TODO: Check if we can do without encoding it.
+                if let imageData = Data(base64Encoded: inventoryRes.data) {
+                    self.addToInventory(data: imageData)
+                }
+            }
             
         } catch let err {
             print(err)
         }
+        if let responses = _responses {
+            for response in responses {
+                print("Sending \(response) response")
+                remotePeer.sendData(response) { data, remoteCentral, error in
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    func requestMissingInventoryItems(available hashes: [String]) throws -> [Data] {
+        let inventoryReq = Pb.InventoryItemRequest.Builder()
+        for hash in hashes {
+            if inventory[hash] != nil {
+                continue
+            }
+            inventoryReq.hash.append(hash)
+        }
+        let msg = Pb.Message.Builder()
+        msg.inventoryRequest = try inventoryReq.build()
+        print("Requesting \(inventoryReq.hash.count) items")
+        return try [msg.build().data()]
+    }
+    
+    func sendInventoryItem(hashes: [String]) throws -> [Data]  {
+        var results = [Data]()
+        for hash in hashes {
+            if let inventory = self.inventory[hash] {
+                let inventoryRes = Pb.InventoryItemResponse.Builder()
+                inventoryRes.data = inventory.data.base64EncodedString()
+                inventoryRes.from = inventory.from
+                let msg = Pb.Message.Builder()
+                msg.inventoryResponse = try inventoryRes.build()
+                results.append(try msg.build().data())
+            }
+        }
+        return results
     }
 }

@@ -22,275 +22,6 @@ public extension Pb {
         }
     }
 
-    final public class InventoryItem : GeneratedMessage {
-        public typealias BuilderType = Pb.InventoryItem.Builder
-
-        public static func == (lhs: Pb.InventoryItem, rhs: Pb.InventoryItem) -> Bool {
-            if lhs === rhs {
-                return true
-            }
-            var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
-            fieldCheck = fieldCheck && (lhs.hasFrom == rhs.hasFrom) && (!lhs.hasFrom || lhs.from == rhs.from)
-            fieldCheck = fieldCheck && (lhs.hasData == rhs.hasData) && (!lhs.hasData || lhs.data == rhs.data)
-            fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
-            return fieldCheck
-        }
-
-        public fileprivate(set) var from:String! = nil
-        public fileprivate(set) var hasFrom:Bool = false
-
-        public fileprivate(set) var data:String! = nil
-        public fileprivate(set) var hasData:Bool = false
-
-        required public init() {
-            super.init()
-        }
-        override public func isInitialized() -> Bool {
-            return true
-        }
-        override public func writeTo(codedOutputStream: CodedOutputStream) throws {
-            if hasFrom {
-                try codedOutputStream.writeString(fieldNumber: 1, value:from)
-            }
-            if hasData {
-                try codedOutputStream.writeString(fieldNumber: 2, value:data)
-            }
-            try unknownFields.writeTo(codedOutputStream: codedOutputStream)
-        }
-        override public func serializedSize() -> Int32 {
-            var serialize_size:Int32 = memoizedSerializedSize
-            if serialize_size != -1 {
-             return serialize_size
-            }
-
-            serialize_size = 0
-            if hasFrom {
-                serialize_size += from.computeStringSize(fieldNumber: 1)
-            }
-            if hasData {
-                serialize_size += data.computeStringSize(fieldNumber: 2)
-            }
-            serialize_size += unknownFields.serializedSize()
-            memoizedSerializedSize = serialize_size
-            return serialize_size
-        }
-        public class func getBuilder() -> Pb.InventoryItem.Builder {
-            return Pb.InventoryItem.classBuilder() as! Pb.InventoryItem.Builder
-        }
-        public func getBuilder() -> Pb.InventoryItem.Builder {
-            return classBuilder() as! Pb.InventoryItem.Builder
-        }
-        override public class func classBuilder() -> ProtocolBuffersMessageBuilder {
-            return Pb.InventoryItem.Builder()
-        }
-        override public func classBuilder() -> ProtocolBuffersMessageBuilder {
-            return Pb.InventoryItem.Builder()
-        }
-        public func toBuilder() throws -> Pb.InventoryItem.Builder {
-            return try Pb.InventoryItem.builderWithPrototype(prototype:self)
-        }
-        public class func builderWithPrototype(prototype:Pb.InventoryItem) throws -> Pb.InventoryItem.Builder {
-            return try Pb.InventoryItem.Builder().mergeFrom(other:prototype)
-        }
-        override public func encode() throws -> Dictionary<String,Any> {
-            guard isInitialized() else {
-                throw ProtocolBuffersError.invalidProtocolBuffer("Uninitialized Message")
-            }
-
-            var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
-            if hasFrom {
-                jsonMap["from"] = from
-            }
-            if hasData {
-                jsonMap["data"] = data
-            }
-            return jsonMap
-        }
-        override class public func decode(jsonMap:Dictionary<String,Any>) throws -> Pb.InventoryItem {
-            return try Pb.InventoryItem.Builder.decodeToBuilder(jsonMap:jsonMap).build()
-        }
-        override class public func fromJSON(data:Data) throws -> Pb.InventoryItem {
-            return try Pb.InventoryItem.Builder.fromJSONToBuilder(data:data).build()
-        }
-        override public func getDescription(indent:String) throws -> String {
-            var output = ""
-            if hasFrom {
-                output += "\(indent) from: \(from) \n"
-            }
-            if hasData {
-                output += "\(indent) data: \(data) \n"
-            }
-            output += unknownFields.getDescription(indent: indent)
-            return output
-        }
-        override public var hashValue:Int {
-            get {
-                var hashCode:Int = 7
-                if hasFrom {
-                    hashCode = (hashCode &* 31) &+ from.hashValue
-                }
-                if hasData {
-                    hashCode = (hashCode &* 31) &+ data.hashValue
-                }
-                hashCode = (hashCode &* 31) &+  unknownFields.hashValue
-                return hashCode
-            }
-        }
-
-
-        //Meta information declaration start
-
-        override public class func className() -> String {
-            return "Pb.InventoryItem"
-        }
-        override public func className() -> String {
-            return "Pb.InventoryItem"
-        }
-        //Meta information declaration end
-
-        final public class Builder : GeneratedMessageBuilder {
-            fileprivate var builderResult:Pb.InventoryItem = Pb.InventoryItem()
-            public func getMessage() -> Pb.InventoryItem {
-                return builderResult
-            }
-
-            required override public init () {
-                super.init()
-            }
-            public var from:String {
-                get {
-                    return builderResult.from
-                }
-                set (value) {
-                    builderResult.hasFrom = true
-                    builderResult.from = value
-                }
-            }
-            public var hasFrom:Bool {
-                get {
-                    return builderResult.hasFrom
-                }
-            }
-            @discardableResult
-            public func setFrom(_ value:String) -> Pb.InventoryItem.Builder {
-                self.from = value
-                return self
-            }
-            @discardableResult
-            public func clearFrom() -> Pb.InventoryItem.Builder{
-                builderResult.hasFrom = false
-                builderResult.from = nil
-                return self
-            }
-            public var data:String {
-                get {
-                    return builderResult.data
-                }
-                set (value) {
-                    builderResult.hasData = true
-                    builderResult.data = value
-                }
-            }
-            public var hasData:Bool {
-                get {
-                    return builderResult.hasData
-                }
-            }
-            @discardableResult
-            public func setData(_ value:String) -> Pb.InventoryItem.Builder {
-                self.data = value
-                return self
-            }
-            @discardableResult
-            public func clearData() -> Pb.InventoryItem.Builder{
-                builderResult.hasData = false
-                builderResult.data = nil
-                return self
-            }
-            override public var internalGetResult:GeneratedMessage {
-                get {
-                    return builderResult
-                }
-            }
-            @discardableResult
-            override public func clear() -> Pb.InventoryItem.Builder {
-                builderResult = Pb.InventoryItem()
-                return self
-            }
-            override public func clone() throws -> Pb.InventoryItem.Builder {
-                return try Pb.InventoryItem.builderWithPrototype(prototype:builderResult)
-            }
-            override public func build() throws -> Pb.InventoryItem {
-                try checkInitialized()
-                return buildPartial()
-            }
-            public func buildPartial() -> Pb.InventoryItem {
-                let returnMe:Pb.InventoryItem = builderResult
-                return returnMe
-            }
-            @discardableResult
-            public func mergeFrom(other:Pb.InventoryItem) throws -> Pb.InventoryItem.Builder {
-                if other == Pb.InventoryItem() {
-                    return self
-                }
-                if other.hasFrom {
-                    from = other.from
-                }
-                if other.hasData {
-                    data = other.data
-                }
-                try merge(unknownField: other.unknownFields)
-                return self
-            }
-            @discardableResult
-            override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pb.InventoryItem.Builder {
-                return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
-            }
-            @discardableResult
-            override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItem.Builder {
-                let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
-                while (true) {
-                    let protobufTag = try codedInputStream.readTag()
-                    switch protobufTag {
-                    case 0: 
-                        self.unknownFields = try unknownFieldsBuilder.build()
-                        return self
-
-                    case 10:
-                        from = try codedInputStream.readString()
-
-                    case 18:
-                        data = try codedInputStream.readString()
-
-                    default:
-                        if (!(try parse(codedInputStream:codedInputStream, unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
-                            unknownFields = try unknownFieldsBuilder.build()
-                            return self
-                        }
-                    }
-                }
-            }
-            class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pb.InventoryItem.Builder {
-                let resultDecodedBuilder = Pb.InventoryItem.Builder()
-                if let jsonValueFrom = jsonMap["from"] as? String {
-                    resultDecodedBuilder.from = jsonValueFrom
-                }
-                if let jsonValueData = jsonMap["data"] as? String {
-                    resultDecodedBuilder.data = jsonValueData
-                }
-                return resultDecodedBuilder
-            }
-            override class public func fromJSONToBuilder(data:Data) throws -> Pb.InventoryItem.Builder {
-                let jsonData = try JSONSerialization.jsonObject(with:data, options: JSONSerialization.ReadingOptions(rawValue: 0))
-                guard let jsDataCast = jsonData as? Dictionary<String,Any> else {
-                  throw ProtocolBuffersError.invalidProtocolBuffer("Invalid JSON data")
-                }
-                return try Pb.InventoryItem.Builder.decodeToBuilder(jsonMap:jsDataCast)
-            }
-        }
-
-    }
-
     final public class Inventory : GeneratedMessage {
         public typealias BuilderType = Pb.Inventory.Builder
 
@@ -513,6 +244,497 @@ public extension Pb {
 
     }
 
+    final public class InventoryItemRequest : GeneratedMessage {
+        public typealias BuilderType = Pb.InventoryItemRequest.Builder
+
+        public static func == (lhs: Pb.InventoryItemRequest, rhs: Pb.InventoryItemRequest) -> Bool {
+            if lhs === rhs {
+                return true
+            }
+            var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+            fieldCheck = fieldCheck && (lhs.hash == rhs.hash)
+            fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+            return fieldCheck
+        }
+
+        public fileprivate(set) var hash:Array<String> = Array<String>()
+        required public init() {
+            super.init()
+        }
+        override public func isInitialized() -> Bool {
+            return true
+        }
+        override public func writeTo(codedOutputStream: CodedOutputStream) throws {
+            if !hash.isEmpty {
+                for oneValuehash in hash {
+                    try codedOutputStream.writeString(fieldNumber: 1, value:oneValuehash)
+                }
+            }
+            try unknownFields.writeTo(codedOutputStream: codedOutputStream)
+        }
+        override public func serializedSize() -> Int32 {
+            var serialize_size:Int32 = memoizedSerializedSize
+            if serialize_size != -1 {
+             return serialize_size
+            }
+
+            serialize_size = 0
+            var dataSizeHash:Int32 = 0
+            for oneValuehash in hash {
+                dataSizeHash += oneValuehash.computeStringSizeNoTag()
+            }
+            serialize_size += dataSizeHash
+            serialize_size += 1 * Int32(hash.count)
+            serialize_size += unknownFields.serializedSize()
+            memoizedSerializedSize = serialize_size
+            return serialize_size
+        }
+        public class func getBuilder() -> Pb.InventoryItemRequest.Builder {
+            return Pb.InventoryItemRequest.classBuilder() as! Pb.InventoryItemRequest.Builder
+        }
+        public func getBuilder() -> Pb.InventoryItemRequest.Builder {
+            return classBuilder() as! Pb.InventoryItemRequest.Builder
+        }
+        override public class func classBuilder() -> ProtocolBuffersMessageBuilder {
+            return Pb.InventoryItemRequest.Builder()
+        }
+        override public func classBuilder() -> ProtocolBuffersMessageBuilder {
+            return Pb.InventoryItemRequest.Builder()
+        }
+        public func toBuilder() throws -> Pb.InventoryItemRequest.Builder {
+            return try Pb.InventoryItemRequest.builderWithPrototype(prototype:self)
+        }
+        public class func builderWithPrototype(prototype:Pb.InventoryItemRequest) throws -> Pb.InventoryItemRequest.Builder {
+            return try Pb.InventoryItemRequest.Builder().mergeFrom(other:prototype)
+        }
+        override public func encode() throws -> Dictionary<String,Any> {
+            guard isInitialized() else {
+                throw ProtocolBuffersError.invalidProtocolBuffer("Uninitialized Message")
+            }
+
+            var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
+            if !hash.isEmpty {
+                var jsonArrayHash:Array<String> = []
+                for oneValueHash in hash {
+                    jsonArrayHash.append(oneValueHash)
+                }
+                jsonMap["hash"] = jsonArrayHash
+            }
+            return jsonMap
+        }
+        override class public func decode(jsonMap:Dictionary<String,Any>) throws -> Pb.InventoryItemRequest {
+            return try Pb.InventoryItemRequest.Builder.decodeToBuilder(jsonMap:jsonMap).build()
+        }
+        override class public func fromJSON(data:Data) throws -> Pb.InventoryItemRequest {
+            return try Pb.InventoryItemRequest.Builder.fromJSONToBuilder(data:data).build()
+        }
+        override public func getDescription(indent:String) throws -> String {
+            var output = ""
+            var hashElementIndex:Int = 0
+            for oneValueHash in hash  {
+                output += "\(indent) hash[\(hashElementIndex)]: \(oneValueHash)\n"
+                hashElementIndex += 1
+            }
+            output += unknownFields.getDescription(indent: indent)
+            return output
+        }
+        override public var hashValue:Int {
+            get {
+                var hashCode:Int = 7
+                for oneValueHash in hash {
+                    hashCode = (hashCode &* 31) &+ oneValueHash.hashValue
+                }
+                hashCode = (hashCode &* 31) &+  unknownFields.hashValue
+                return hashCode
+            }
+        }
+
+
+        //Meta information declaration start
+
+        override public class func className() -> String {
+            return "Pb.InventoryItemRequest"
+        }
+        override public func className() -> String {
+            return "Pb.InventoryItemRequest"
+        }
+        //Meta information declaration end
+
+        final public class Builder : GeneratedMessageBuilder {
+            fileprivate var builderResult:Pb.InventoryItemRequest = Pb.InventoryItemRequest()
+            public func getMessage() -> Pb.InventoryItemRequest {
+                return builderResult
+            }
+
+            required override public init () {
+                super.init()
+            }
+            public var hash:Array<String> {
+                get {
+                    return builderResult.hash
+                }
+                set (array) {
+                    builderResult.hash = array
+                }
+            }
+            @discardableResult
+            public func setHash(_ value:Array<String>) -> Pb.InventoryItemRequest.Builder {
+                self.hash = value
+                return self
+            }
+            @discardableResult
+            public func clearHash() -> Pb.InventoryItemRequest.Builder {
+                builderResult.hash.removeAll(keepingCapacity: false)
+                return self
+            }
+            override public var internalGetResult:GeneratedMessage {
+                get {
+                    return builderResult
+                }
+            }
+            @discardableResult
+            override public func clear() -> Pb.InventoryItemRequest.Builder {
+                builderResult = Pb.InventoryItemRequest()
+                return self
+            }
+            override public func clone() throws -> Pb.InventoryItemRequest.Builder {
+                return try Pb.InventoryItemRequest.builderWithPrototype(prototype:builderResult)
+            }
+            override public func build() throws -> Pb.InventoryItemRequest {
+                try checkInitialized()
+                return buildPartial()
+            }
+            public func buildPartial() -> Pb.InventoryItemRequest {
+                let returnMe:Pb.InventoryItemRequest = builderResult
+                return returnMe
+            }
+            @discardableResult
+            public func mergeFrom(other:Pb.InventoryItemRequest) throws -> Pb.InventoryItemRequest.Builder {
+                if other == Pb.InventoryItemRequest() {
+                    return self
+                }
+                if !other.hash.isEmpty {
+                    builderResult.hash += other.hash
+                }
+                try merge(unknownField: other.unknownFields)
+                return self
+            }
+            @discardableResult
+            override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pb.InventoryItemRequest.Builder {
+                return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
+            }
+            @discardableResult
+            override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemRequest.Builder {
+                let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
+                while (true) {
+                    let protobufTag = try codedInputStream.readTag()
+                    switch protobufTag {
+                    case 0: 
+                        self.unknownFields = try unknownFieldsBuilder.build()
+                        return self
+
+                    case 10:
+                        hash += [try codedInputStream.readString()]
+
+                    default:
+                        if (!(try parse(codedInputStream:codedInputStream, unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
+                            unknownFields = try unknownFieldsBuilder.build()
+                            return self
+                        }
+                    }
+                }
+            }
+            class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pb.InventoryItemRequest.Builder {
+                let resultDecodedBuilder = Pb.InventoryItemRequest.Builder()
+                if let jsonValueHash = jsonMap["hash"] as? Array<String> {
+                    var jsonArrayHash:Array<String> = []
+                    for oneValueHash in jsonValueHash {
+                        jsonArrayHash.append(oneValueHash)
+                    }
+                    resultDecodedBuilder.hash = jsonArrayHash
+                }
+                return resultDecodedBuilder
+            }
+            override class public func fromJSONToBuilder(data:Data) throws -> Pb.InventoryItemRequest.Builder {
+                let jsonData = try JSONSerialization.jsonObject(with:data, options: JSONSerialization.ReadingOptions(rawValue: 0))
+                guard let jsDataCast = jsonData as? Dictionary<String,Any> else {
+                  throw ProtocolBuffersError.invalidProtocolBuffer("Invalid JSON data")
+                }
+                return try Pb.InventoryItemRequest.Builder.decodeToBuilder(jsonMap:jsDataCast)
+            }
+        }
+
+    }
+
+    final public class InventoryItemResponse : GeneratedMessage {
+        public typealias BuilderType = Pb.InventoryItemResponse.Builder
+
+        public static func == (lhs: Pb.InventoryItemResponse, rhs: Pb.InventoryItemResponse) -> Bool {
+            if lhs === rhs {
+                return true
+            }
+            var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
+            fieldCheck = fieldCheck && (lhs.hasFrom == rhs.hasFrom) && (!lhs.hasFrom || lhs.from == rhs.from)
+            fieldCheck = fieldCheck && (lhs.hasData == rhs.hasData) && (!lhs.hasData || lhs.data == rhs.data)
+            fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
+            return fieldCheck
+        }
+
+        public fileprivate(set) var from:String! = nil
+        public fileprivate(set) var hasFrom:Bool = false
+
+        public fileprivate(set) var data:String! = nil
+        public fileprivate(set) var hasData:Bool = false
+
+        required public init() {
+            super.init()
+        }
+        override public func isInitialized() -> Bool {
+            return true
+        }
+        override public func writeTo(codedOutputStream: CodedOutputStream) throws {
+            if hasFrom {
+                try codedOutputStream.writeString(fieldNumber: 1, value:from)
+            }
+            if hasData {
+                try codedOutputStream.writeString(fieldNumber: 2, value:data)
+            }
+            try unknownFields.writeTo(codedOutputStream: codedOutputStream)
+        }
+        override public func serializedSize() -> Int32 {
+            var serialize_size:Int32 = memoizedSerializedSize
+            if serialize_size != -1 {
+             return serialize_size
+            }
+
+            serialize_size = 0
+            if hasFrom {
+                serialize_size += from.computeStringSize(fieldNumber: 1)
+            }
+            if hasData {
+                serialize_size += data.computeStringSize(fieldNumber: 2)
+            }
+            serialize_size += unknownFields.serializedSize()
+            memoizedSerializedSize = serialize_size
+            return serialize_size
+        }
+        public class func getBuilder() -> Pb.InventoryItemResponse.Builder {
+            return Pb.InventoryItemResponse.classBuilder() as! Pb.InventoryItemResponse.Builder
+        }
+        public func getBuilder() -> Pb.InventoryItemResponse.Builder {
+            return classBuilder() as! Pb.InventoryItemResponse.Builder
+        }
+        override public class func classBuilder() -> ProtocolBuffersMessageBuilder {
+            return Pb.InventoryItemResponse.Builder()
+        }
+        override public func classBuilder() -> ProtocolBuffersMessageBuilder {
+            return Pb.InventoryItemResponse.Builder()
+        }
+        public func toBuilder() throws -> Pb.InventoryItemResponse.Builder {
+            return try Pb.InventoryItemResponse.builderWithPrototype(prototype:self)
+        }
+        public class func builderWithPrototype(prototype:Pb.InventoryItemResponse) throws -> Pb.InventoryItemResponse.Builder {
+            return try Pb.InventoryItemResponse.Builder().mergeFrom(other:prototype)
+        }
+        override public func encode() throws -> Dictionary<String,Any> {
+            guard isInitialized() else {
+                throw ProtocolBuffersError.invalidProtocolBuffer("Uninitialized Message")
+            }
+
+            var jsonMap:Dictionary<String,Any> = Dictionary<String,Any>()
+            if hasFrom {
+                jsonMap["from"] = from
+            }
+            if hasData {
+                jsonMap["data"] = data
+            }
+            return jsonMap
+        }
+        override class public func decode(jsonMap:Dictionary<String,Any>) throws -> Pb.InventoryItemResponse {
+            return try Pb.InventoryItemResponse.Builder.decodeToBuilder(jsonMap:jsonMap).build()
+        }
+        override class public func fromJSON(data:Data) throws -> Pb.InventoryItemResponse {
+            return try Pb.InventoryItemResponse.Builder.fromJSONToBuilder(data:data).build()
+        }
+        override public func getDescription(indent:String) throws -> String {
+            var output = ""
+            if hasFrom {
+                output += "\(indent) from: \(from) \n"
+            }
+            if hasData {
+                output += "\(indent) data: \(data) \n"
+            }
+            output += unknownFields.getDescription(indent: indent)
+            return output
+        }
+        override public var hashValue:Int {
+            get {
+                var hashCode:Int = 7
+                if hasFrom {
+                    hashCode = (hashCode &* 31) &+ from.hashValue
+                }
+                if hasData {
+                    hashCode = (hashCode &* 31) &+ data.hashValue
+                }
+                hashCode = (hashCode &* 31) &+  unknownFields.hashValue
+                return hashCode
+            }
+        }
+
+
+        //Meta information declaration start
+
+        override public class func className() -> String {
+            return "Pb.InventoryItemResponse"
+        }
+        override public func className() -> String {
+            return "Pb.InventoryItemResponse"
+        }
+        //Meta information declaration end
+
+        final public class Builder : GeneratedMessageBuilder {
+            fileprivate var builderResult:Pb.InventoryItemResponse = Pb.InventoryItemResponse()
+            public func getMessage() -> Pb.InventoryItemResponse {
+                return builderResult
+            }
+
+            required override public init () {
+                super.init()
+            }
+            public var from:String {
+                get {
+                    return builderResult.from
+                }
+                set (value) {
+                    builderResult.hasFrom = true
+                    builderResult.from = value
+                }
+            }
+            public var hasFrom:Bool {
+                get {
+                    return builderResult.hasFrom
+                }
+            }
+            @discardableResult
+            public func setFrom(_ value:String) -> Pb.InventoryItemResponse.Builder {
+                self.from = value
+                return self
+            }
+            @discardableResult
+            public func clearFrom() -> Pb.InventoryItemResponse.Builder{
+                builderResult.hasFrom = false
+                builderResult.from = nil
+                return self
+            }
+            public var data:String {
+                get {
+                    return builderResult.data
+                }
+                set (value) {
+                    builderResult.hasData = true
+                    builderResult.data = value
+                }
+            }
+            public var hasData:Bool {
+                get {
+                    return builderResult.hasData
+                }
+            }
+            @discardableResult
+            public func setData(_ value:String) -> Pb.InventoryItemResponse.Builder {
+                self.data = value
+                return self
+            }
+            @discardableResult
+            public func clearData() -> Pb.InventoryItemResponse.Builder{
+                builderResult.hasData = false
+                builderResult.data = nil
+                return self
+            }
+            override public var internalGetResult:GeneratedMessage {
+                get {
+                    return builderResult
+                }
+            }
+            @discardableResult
+            override public func clear() -> Pb.InventoryItemResponse.Builder {
+                builderResult = Pb.InventoryItemResponse()
+                return self
+            }
+            override public func clone() throws -> Pb.InventoryItemResponse.Builder {
+                return try Pb.InventoryItemResponse.builderWithPrototype(prototype:builderResult)
+            }
+            override public func build() throws -> Pb.InventoryItemResponse {
+                try checkInitialized()
+                return buildPartial()
+            }
+            public func buildPartial() -> Pb.InventoryItemResponse {
+                let returnMe:Pb.InventoryItemResponse = builderResult
+                return returnMe
+            }
+            @discardableResult
+            public func mergeFrom(other:Pb.InventoryItemResponse) throws -> Pb.InventoryItemResponse.Builder {
+                if other == Pb.InventoryItemResponse() {
+                    return self
+                }
+                if other.hasFrom {
+                    from = other.from
+                }
+                if other.hasData {
+                    data = other.data
+                }
+                try merge(unknownField: other.unknownFields)
+                return self
+            }
+            @discardableResult
+            override public func mergeFrom(codedInputStream: CodedInputStream) throws -> Pb.InventoryItemResponse.Builder {
+                return try mergeFrom(codedInputStream: codedInputStream, extensionRegistry:ExtensionRegistry())
+            }
+            @discardableResult
+            override public func mergeFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemResponse.Builder {
+                let unknownFieldsBuilder:UnknownFieldSet.Builder = try UnknownFieldSet.builderWithUnknownFields(copyFrom:self.unknownFields)
+                while (true) {
+                    let protobufTag = try codedInputStream.readTag()
+                    switch protobufTag {
+                    case 0: 
+                        self.unknownFields = try unknownFieldsBuilder.build()
+                        return self
+
+                    case 10:
+                        from = try codedInputStream.readString()
+
+                    case 18:
+                        data = try codedInputStream.readString()
+
+                    default:
+                        if (!(try parse(codedInputStream:codedInputStream, unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
+                            unknownFields = try unknownFieldsBuilder.build()
+                            return self
+                        }
+                    }
+                }
+            }
+            class override public func decodeToBuilder(jsonMap:Dictionary<String,Any>) throws -> Pb.InventoryItemResponse.Builder {
+                let resultDecodedBuilder = Pb.InventoryItemResponse.Builder()
+                if let jsonValueFrom = jsonMap["from"] as? String {
+                    resultDecodedBuilder.from = jsonValueFrom
+                }
+                if let jsonValueData = jsonMap["data"] as? String {
+                    resultDecodedBuilder.data = jsonValueData
+                }
+                return resultDecodedBuilder
+            }
+            override class public func fromJSONToBuilder(data:Data) throws -> Pb.InventoryItemResponse.Builder {
+                let jsonData = try JSONSerialization.jsonObject(with:data, options: JSONSerialization.ReadingOptions(rawValue: 0))
+                guard let jsDataCast = jsonData as? Dictionary<String,Any> else {
+                  throw ProtocolBuffersError.invalidProtocolBuffer("Invalid JSON data")
+                }
+                return try Pb.InventoryItemResponse.Builder.decodeToBuilder(jsonMap:jsDataCast)
+            }
+        }
+
+    }
+
     final public class Message : GeneratedMessage {
         public typealias BuilderType = Pb.Message.Builder
 
@@ -522,8 +744,9 @@ public extension Pb {
             }
             var fieldCheck:Bool = (lhs.hashValue == rhs.hashValue)
             fieldCheck = fieldCheck && (lhs.hasVersion == rhs.hasVersion) && (!lhs.hasVersion || lhs.version == rhs.version)
-            fieldCheck = fieldCheck && (lhs.hasInventoryItem == rhs.hasInventoryItem) && (!lhs.hasInventoryItem || lhs.inventoryItem == rhs.inventoryItem)
             fieldCheck = fieldCheck && (lhs.hasInventory == rhs.hasInventory) && (!lhs.hasInventory || lhs.inventory == rhs.inventory)
+            fieldCheck = fieldCheck && (lhs.hasInventoryRequest == rhs.hasInventoryRequest) && (!lhs.hasInventoryRequest || lhs.inventoryRequest == rhs.inventoryRequest)
+            fieldCheck = fieldCheck && (lhs.hasInventoryResponse == rhs.hasInventoryResponse) && (!lhs.hasInventoryResponse || lhs.inventoryResponse == rhs.inventoryResponse)
             fieldCheck = (fieldCheck && (lhs.unknownFields == rhs.unknownFields))
             return fieldCheck
         }
@@ -541,20 +764,29 @@ public extension Pb {
                 default: return true
                 }
             }
-            case InventoryItem(Pb.InventoryItem)
-
-            public static func getInventoryItem(_ value:Msg) -> Pb.InventoryItem? {
-                switch value {
-                case .InventoryItem(let enumValue):
-                    return enumValue
-                    default: return nil
-                }
-            }
             case Inventory(Pb.Inventory)
 
             public static func getInventory(_ value:Msg) -> Pb.Inventory? {
                 switch value {
                 case .Inventory(let enumValue):
+                    return enumValue
+                    default: return nil
+                }
+            }
+            case InventoryRequest(Pb.InventoryItemRequest)
+
+            public static func getInventoryRequest(_ value:Msg) -> Pb.InventoryItemRequest? {
+                switch value {
+                case .InventoryRequest(let enumValue):
+                    return enumValue
+                    default: return nil
+                }
+            }
+            case InventoryResponse(Pb.InventoryItemResponse)
+
+            public static func getInventoryResponse(_ value:Msg) -> Pb.InventoryItemResponse? {
+                switch value {
+                case .InventoryResponse(let enumValue):
                     return enumValue
                     default: return nil
                 }
@@ -570,24 +802,6 @@ public extension Pb {
         public fileprivate(set) var version:Int64! = nil
         public fileprivate(set) var hasVersion:Bool = false
 
-        public fileprivate(set) var inventoryItem:Pb.InventoryItem!{
-            get {
-                return Message.Msg.getInventoryItem(storageMsg)
-            }
-            set (newvalue) {
-                storageMsg = Message.Msg.InventoryItem(newvalue)
-            }
-        }
-        public fileprivate(set) var hasInventoryItem:Bool {
-            get {
-                guard let _ = Message.Msg.getInventoryItem(storageMsg) else {
-                    return false
-                }
-                return true
-            }
-            set(newValue) {
-            }
-        }
         public fileprivate(set) var inventory:Pb.Inventory!{
             get {
                 return Message.Msg.getInventory(storageMsg)
@@ -606,6 +820,42 @@ public extension Pb {
             set(newValue) {
             }
         }
+        public fileprivate(set) var inventoryRequest:Pb.InventoryItemRequest!{
+            get {
+                return Message.Msg.getInventoryRequest(storageMsg)
+            }
+            set (newvalue) {
+                storageMsg = Message.Msg.InventoryRequest(newvalue)
+            }
+        }
+        public fileprivate(set) var hasInventoryRequest:Bool {
+            get {
+                guard let _ = Message.Msg.getInventoryRequest(storageMsg) else {
+                    return false
+                }
+                return true
+            }
+            set(newValue) {
+            }
+        }
+        public fileprivate(set) var inventoryResponse:Pb.InventoryItemResponse!{
+            get {
+                return Message.Msg.getInventoryResponse(storageMsg)
+            }
+            set (newvalue) {
+                storageMsg = Message.Msg.InventoryResponse(newvalue)
+            }
+        }
+        public fileprivate(set) var hasInventoryResponse:Bool {
+            get {
+                guard let _ = Message.Msg.getInventoryResponse(storageMsg) else {
+                    return false
+                }
+                return true
+            }
+            set(newValue) {
+            }
+        }
         required public init() {
             super.init()
         }
@@ -616,11 +866,14 @@ public extension Pb {
             if hasVersion {
                 try codedOutputStream.writeInt64(fieldNumber: 1, value:version)
             }
-            if hasInventoryItem {
-                try codedOutputStream.writeMessage(fieldNumber: 2, value:inventoryItem)
-            }
             if hasInventory {
-                try codedOutputStream.writeMessage(fieldNumber: 3, value:inventory)
+                try codedOutputStream.writeMessage(fieldNumber: 2, value:inventory)
+            }
+            if hasInventoryRequest {
+                try codedOutputStream.writeMessage(fieldNumber: 3, value:inventoryRequest)
+            }
+            if hasInventoryResponse {
+                try codedOutputStream.writeMessage(fieldNumber: 4, value:inventoryResponse)
             }
             try unknownFields.writeTo(codedOutputStream: codedOutputStream)
         }
@@ -634,14 +887,19 @@ public extension Pb {
             if hasVersion {
                 serialize_size += version.computeInt64Size(fieldNumber: 1)
             }
-            if hasInventoryItem {
-                if let varSizeinventoryItem = inventoryItem?.computeMessageSize(fieldNumber: 2) {
-                    serialize_size += varSizeinventoryItem
+            if hasInventory {
+                if let varSizeinventory = inventory?.computeMessageSize(fieldNumber: 2) {
+                    serialize_size += varSizeinventory
                 }
             }
-            if hasInventory {
-                if let varSizeinventory = inventory?.computeMessageSize(fieldNumber: 3) {
-                    serialize_size += varSizeinventory
+            if hasInventoryRequest {
+                if let varSizeinventoryRequest = inventoryRequest?.computeMessageSize(fieldNumber: 3) {
+                    serialize_size += varSizeinventoryRequest
+                }
+            }
+            if hasInventoryResponse {
+                if let varSizeinventoryResponse = inventoryResponse?.computeMessageSize(fieldNumber: 4) {
+                    serialize_size += varSizeinventoryResponse
                 }
             }
             serialize_size += unknownFields.serializedSize()
@@ -675,11 +933,14 @@ public extension Pb {
             if hasVersion {
                 jsonMap["version"] = "\(version)"
             }
-            if hasInventoryItem {
-                jsonMap["inventoryItem"] = try inventoryItem.encode()
-            }
             if hasInventory {
                 jsonMap["inventory"] = try inventory.encode()
+            }
+            if hasInventoryRequest {
+                jsonMap["inventoryRequest"] = try inventoryRequest.encode()
+            }
+            if hasInventoryResponse {
+                jsonMap["inventoryResponse"] = try inventoryResponse.encode()
             }
             return jsonMap
         }
@@ -694,17 +955,24 @@ public extension Pb {
             if hasVersion {
                 output += "\(indent) version: \(version) \n"
             }
-            if hasInventoryItem {
-                output += "\(indent) inventoryItem {\n"
-                if let outDescInventoryItem = inventoryItem {
-                    output += try outDescInventoryItem.getDescription(indent: "\(indent)  ")
-                }
-                output += "\(indent) }\n"
-            }
             if hasInventory {
                 output += "\(indent) inventory {\n"
                 if let outDescInventory = inventory {
                     output += try outDescInventory.getDescription(indent: "\(indent)  ")
+                }
+                output += "\(indent) }\n"
+            }
+            if hasInventoryRequest {
+                output += "\(indent) inventoryRequest {\n"
+                if let outDescInventoryRequest = inventoryRequest {
+                    output += try outDescInventoryRequest.getDescription(indent: "\(indent)  ")
+                }
+                output += "\(indent) }\n"
+            }
+            if hasInventoryResponse {
+                output += "\(indent) inventoryResponse {\n"
+                if let outDescInventoryResponse = inventoryResponse {
+                    output += try outDescInventoryResponse.getDescription(indent: "\(indent)  ")
                 }
                 output += "\(indent) }\n"
             }
@@ -717,14 +985,19 @@ public extension Pb {
                 if hasVersion {
                     hashCode = (hashCode &* 31) &+ version.hashValue
                 }
-                if hasInventoryItem {
-                    if let hashValueinventoryItem = inventoryItem?.hashValue {
-                        hashCode = (hashCode &* 31) &+ hashValueinventoryItem
-                    }
-                }
                 if hasInventory {
                     if let hashValueinventory = inventory?.hashValue {
                         hashCode = (hashCode &* 31) &+ hashValueinventory
+                    }
+                }
+                if hasInventoryRequest {
+                    if let hashValueinventoryRequest = inventoryRequest?.hashValue {
+                        hashCode = (hashCode &* 31) &+ hashValueinventoryRequest
+                    }
+                }
+                if hasInventoryResponse {
+                    if let hashValueinventoryResponse = inventoryResponse?.hashValue {
+                        hashCode = (hashCode &* 31) &+ hashValueinventoryResponse
                     }
                 }
                 hashCode = (hashCode &* 31) &+  unknownFields.hashValue
@@ -775,60 +1048,6 @@ public extension Pb {
             public func clearVersion() -> Pb.Message.Builder{
                 builderResult.hasVersion = false
                 builderResult.version = nil
-                return self
-            }
-            public var inventoryItem:Pb.InventoryItem! {
-                get {
-                    if inventoryItemBuilder_ != nil {
-                        builderResult.inventoryItem = inventoryItemBuilder_.getMessage()
-                    }
-                    return builderResult.inventoryItem
-                }
-                set (value) {
-                    builderResult.hasInventoryItem = true
-                    builderResult.inventoryItem = value
-                }
-            }
-            public var hasInventoryItem:Bool {
-                get {
-                    return builderResult.hasInventoryItem
-                }
-            }
-            fileprivate var inventoryItemBuilder_:Pb.InventoryItem.Builder! {
-                didSet {
-                    builderResult.hasInventoryItem = true
-                }
-            }
-            public func getInventoryItemBuilder() -> Pb.InventoryItem.Builder {
-                if inventoryItemBuilder_ == nil {
-                    inventoryItemBuilder_ = Pb.InventoryItem.Builder()
-                    builderResult.inventoryItem = inventoryItemBuilder_.getMessage()
-                    if inventoryItem != nil {
-                        try! inventoryItemBuilder_.mergeFrom(other: inventoryItem)
-                    }
-                }
-                return inventoryItemBuilder_
-            }
-            @discardableResult
-            public func setInventoryItem(_ value:Pb.InventoryItem!) -> Pb.Message.Builder {
-                self.inventoryItem = value
-                return self
-            }
-            @discardableResult
-            public func mergeInventoryItem(value:Pb.InventoryItem) throws -> Pb.Message.Builder {
-                if builderResult.hasInventoryItem {
-                    builderResult.inventoryItem = try Pb.InventoryItem.builderWithPrototype(prototype:builderResult.inventoryItem).mergeFrom(other: value).buildPartial()
-                } else {
-                    builderResult.inventoryItem = value
-                }
-                builderResult.hasInventoryItem = true
-                return self
-            }
-            @discardableResult
-            public func clearInventoryItem() -> Pb.Message.Builder {
-                inventoryItemBuilder_ = nil
-                builderResult.hasInventoryItem = false
-                builderResult.inventoryItem = nil
                 return self
             }
             public var inventory:Pb.Inventory! {
@@ -885,6 +1104,114 @@ public extension Pb {
                 builderResult.inventory = nil
                 return self
             }
+            public var inventoryRequest:Pb.InventoryItemRequest! {
+                get {
+                    if inventoryRequestBuilder_ != nil {
+                        builderResult.inventoryRequest = inventoryRequestBuilder_.getMessage()
+                    }
+                    return builderResult.inventoryRequest
+                }
+                set (value) {
+                    builderResult.hasInventoryRequest = true
+                    builderResult.inventoryRequest = value
+                }
+            }
+            public var hasInventoryRequest:Bool {
+                get {
+                    return builderResult.hasInventoryRequest
+                }
+            }
+            fileprivate var inventoryRequestBuilder_:Pb.InventoryItemRequest.Builder! {
+                didSet {
+                    builderResult.hasInventoryRequest = true
+                }
+            }
+            public func getInventoryRequestBuilder() -> Pb.InventoryItemRequest.Builder {
+                if inventoryRequestBuilder_ == nil {
+                    inventoryRequestBuilder_ = Pb.InventoryItemRequest.Builder()
+                    builderResult.inventoryRequest = inventoryRequestBuilder_.getMessage()
+                    if inventoryRequest != nil {
+                        try! inventoryRequestBuilder_.mergeFrom(other: inventoryRequest)
+                    }
+                }
+                return inventoryRequestBuilder_
+            }
+            @discardableResult
+            public func setInventoryRequest(_ value:Pb.InventoryItemRequest!) -> Pb.Message.Builder {
+                self.inventoryRequest = value
+                return self
+            }
+            @discardableResult
+            public func mergeInventoryRequest(value:Pb.InventoryItemRequest) throws -> Pb.Message.Builder {
+                if builderResult.hasInventoryRequest {
+                    builderResult.inventoryRequest = try Pb.InventoryItemRequest.builderWithPrototype(prototype:builderResult.inventoryRequest).mergeFrom(other: value).buildPartial()
+                } else {
+                    builderResult.inventoryRequest = value
+                }
+                builderResult.hasInventoryRequest = true
+                return self
+            }
+            @discardableResult
+            public func clearInventoryRequest() -> Pb.Message.Builder {
+                inventoryRequestBuilder_ = nil
+                builderResult.hasInventoryRequest = false
+                builderResult.inventoryRequest = nil
+                return self
+            }
+            public var inventoryResponse:Pb.InventoryItemResponse! {
+                get {
+                    if inventoryResponseBuilder_ != nil {
+                        builderResult.inventoryResponse = inventoryResponseBuilder_.getMessage()
+                    }
+                    return builderResult.inventoryResponse
+                }
+                set (value) {
+                    builderResult.hasInventoryResponse = true
+                    builderResult.inventoryResponse = value
+                }
+            }
+            public var hasInventoryResponse:Bool {
+                get {
+                    return builderResult.hasInventoryResponse
+                }
+            }
+            fileprivate var inventoryResponseBuilder_:Pb.InventoryItemResponse.Builder! {
+                didSet {
+                    builderResult.hasInventoryResponse = true
+                }
+            }
+            public func getInventoryResponseBuilder() -> Pb.InventoryItemResponse.Builder {
+                if inventoryResponseBuilder_ == nil {
+                    inventoryResponseBuilder_ = Pb.InventoryItemResponse.Builder()
+                    builderResult.inventoryResponse = inventoryResponseBuilder_.getMessage()
+                    if inventoryResponse != nil {
+                        try! inventoryResponseBuilder_.mergeFrom(other: inventoryResponse)
+                    }
+                }
+                return inventoryResponseBuilder_
+            }
+            @discardableResult
+            public func setInventoryResponse(_ value:Pb.InventoryItemResponse!) -> Pb.Message.Builder {
+                self.inventoryResponse = value
+                return self
+            }
+            @discardableResult
+            public func mergeInventoryResponse(value:Pb.InventoryItemResponse) throws -> Pb.Message.Builder {
+                if builderResult.hasInventoryResponse {
+                    builderResult.inventoryResponse = try Pb.InventoryItemResponse.builderWithPrototype(prototype:builderResult.inventoryResponse).mergeFrom(other: value).buildPartial()
+                } else {
+                    builderResult.inventoryResponse = value
+                }
+                builderResult.hasInventoryResponse = true
+                return self
+            }
+            @discardableResult
+            public func clearInventoryResponse() -> Pb.Message.Builder {
+                inventoryResponseBuilder_ = nil
+                builderResult.hasInventoryResponse = false
+                builderResult.inventoryResponse = nil
+                return self
+            }
             override public var internalGetResult:GeneratedMessage {
                 get {
                     return builderResult
@@ -914,11 +1241,14 @@ public extension Pb {
                 if other.hasVersion {
                     version = other.version
                 }
-                if (other.hasInventoryItem) {
-                    try mergeInventoryItem(value: other.inventoryItem)
-                }
                 if (other.hasInventory) {
                     try mergeInventory(value: other.inventory)
+                }
+                if (other.hasInventoryRequest) {
+                    try mergeInventoryRequest(value: other.inventoryRequest)
+                }
+                if (other.hasInventoryResponse) {
+                    try mergeInventoryResponse(value: other.inventoryResponse)
                 }
                 try merge(unknownField: other.unknownFields)
                 return self
@@ -941,20 +1271,28 @@ public extension Pb {
                         version = try codedInputStream.readInt64()
 
                     case 18:
-                        let subBuilder:Pb.InventoryItem.Builder = Pb.InventoryItem.Builder()
-                        if hasInventoryItem {
-                            try subBuilder.mergeFrom(other: inventoryItem)
-                        }
-                        try codedInputStream.readMessage(builder: subBuilder, extensionRegistry:extensionRegistry)
-                        inventoryItem = subBuilder.buildPartial()
-
-                    case 26:
                         let subBuilder:Pb.Inventory.Builder = Pb.Inventory.Builder()
                         if hasInventory {
                             try subBuilder.mergeFrom(other: inventory)
                         }
                         try codedInputStream.readMessage(builder: subBuilder, extensionRegistry:extensionRegistry)
                         inventory = subBuilder.buildPartial()
+
+                    case 26:
+                        let subBuilder:Pb.InventoryItemRequest.Builder = Pb.InventoryItemRequest.Builder()
+                        if hasInventoryRequest {
+                            try subBuilder.mergeFrom(other: inventoryRequest)
+                        }
+                        try codedInputStream.readMessage(builder: subBuilder, extensionRegistry:extensionRegistry)
+                        inventoryRequest = subBuilder.buildPartial()
+
+                    case 34:
+                        let subBuilder:Pb.InventoryItemResponse.Builder = Pb.InventoryItemResponse.Builder()
+                        if hasInventoryResponse {
+                            try subBuilder.mergeFrom(other: inventoryResponse)
+                        }
+                        try codedInputStream.readMessage(builder: subBuilder, extensionRegistry:extensionRegistry)
+                        inventoryResponse = subBuilder.buildPartial()
 
                     default:
                         if (!(try parse(codedInputStream:codedInputStream, unknownFields:unknownFieldsBuilder, extensionRegistry:extensionRegistry, tag:protobufTag))) {
@@ -971,12 +1309,16 @@ public extension Pb {
                 } else if let jsonValueVersion = jsonMap["version"] as? Int {
                     resultDecodedBuilder.version = Int64(jsonValueVersion)
                 }
-                if let jsonValueInventoryItem = jsonMap["inventoryItem"] as? Dictionary<String,Any> {
-                    resultDecodedBuilder.inventoryItem = try Pb.InventoryItem.Builder.decodeToBuilder(jsonMap:jsonValueInventoryItem).build()
-
-                }
                 if let jsonValueInventory = jsonMap["inventory"] as? Dictionary<String,Any> {
                     resultDecodedBuilder.inventory = try Pb.Inventory.Builder.decodeToBuilder(jsonMap:jsonValueInventory).build()
+
+                }
+                if let jsonValueInventoryRequest = jsonMap["inventoryRequest"] as? Dictionary<String,Any> {
+                    resultDecodedBuilder.inventoryRequest = try Pb.InventoryItemRequest.Builder.decodeToBuilder(jsonMap:jsonValueInventoryRequest).build()
+
+                }
+                if let jsonValueInventoryResponse = jsonMap["inventoryResponse"] as? Dictionary<String,Any> {
+                    resultDecodedBuilder.inventoryResponse = try Pb.InventoryItemResponse.Builder.decodeToBuilder(jsonMap:jsonValueInventoryResponse).build()
 
                 }
                 return resultDecodedBuilder
@@ -992,70 +1334,6 @@ public extension Pb {
 
     }
 
-}
-extension Pb.InventoryItem: GeneratedMessageProtocol {
-    public class func parseArrayDelimitedFrom(inputStream: InputStream) throws -> Array<Pb.InventoryItem> {
-        var mergedArray = Array<Pb.InventoryItem>()
-        while let value = try parseDelimitedFrom(inputStream: inputStream) {
-          mergedArray.append(value)
-        }
-        return mergedArray
-    }
-    public class func parseDelimitedFrom(inputStream: InputStream) throws -> Pb.InventoryItem? {
-        return try Pb.InventoryItem.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
-    }
-    public class func parseFrom(data: Data) throws -> Pb.InventoryItem {
-        return try Pb.InventoryItem.Builder().mergeFrom(data: data, extensionRegistry:Pb.ProtocolRoot.default.extensionRegistry).build()
-    }
-    public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItem {
-        return try Pb.InventoryItem.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
-    }
-    public class func parseFrom(inputStream: InputStream) throws -> Pb.InventoryItem {
-        return try Pb.InventoryItem.Builder().mergeFrom(inputStream: inputStream).build()
-    }
-    public class func parseFrom(inputStream: InputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItem {
-        return try Pb.InventoryItem.Builder().mergeFrom(inputStream: inputStream, extensionRegistry:extensionRegistry).build()
-    }
-    public class func parseFrom(codedInputStream: CodedInputStream) throws -> Pb.InventoryItem {
-        return try Pb.InventoryItem.Builder().mergeFrom(codedInputStream: codedInputStream).build()
-    }
-    public class func parseFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItem {
-        return try Pb.InventoryItem.Builder().mergeFrom(codedInputStream: codedInputStream, extensionRegistry:extensionRegistry).build()
-    }
-    public subscript(key: String) -> Any? {
-        switch key {
-        case "from": return self.from
-        case "data": return self.data
-        default: return nil
-        }
-    }
-}
-extension Pb.InventoryItem.Builder: GeneratedMessageBuilderProtocol {
-    public typealias GeneratedMessageType = Pb.InventoryItem
-    public subscript(key: String) -> Any? {
-        get { 
-            switch key {
-            case "from": return self.from
-            case "data": return self.data
-            default: return nil
-            }
-        }
-        set (newSubscriptValue) { 
-            switch key {
-            case "from":
-                guard let newSubscriptValue = newSubscriptValue as? String else {
-                    return
-                }
-                self.from = newSubscriptValue
-            case "data":
-                guard let newSubscriptValue = newSubscriptValue as? String else {
-                    return
-                }
-                self.data = newSubscriptValue
-            default: return
-            }
-        }
-    }
 }
 extension Pb.Inventory: GeneratedMessageProtocol {
     public class func parseArrayDelimitedFrom(inputStream: InputStream) throws -> Array<Pb.Inventory> {
@@ -1114,6 +1392,127 @@ extension Pb.Inventory.Builder: GeneratedMessageBuilderProtocol {
         }
     }
 }
+extension Pb.InventoryItemRequest: GeneratedMessageProtocol {
+    public class func parseArrayDelimitedFrom(inputStream: InputStream) throws -> Array<Pb.InventoryItemRequest> {
+        var mergedArray = Array<Pb.InventoryItemRequest>()
+        while let value = try parseDelimitedFrom(inputStream: inputStream) {
+          mergedArray.append(value)
+        }
+        return mergedArray
+    }
+    public class func parseDelimitedFrom(inputStream: InputStream) throws -> Pb.InventoryItemRequest? {
+        return try Pb.InventoryItemRequest.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
+    }
+    public class func parseFrom(data: Data) throws -> Pb.InventoryItemRequest {
+        return try Pb.InventoryItemRequest.Builder().mergeFrom(data: data, extensionRegistry:Pb.ProtocolRoot.default.extensionRegistry).build()
+    }
+    public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemRequest {
+        return try Pb.InventoryItemRequest.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
+    }
+    public class func parseFrom(inputStream: InputStream) throws -> Pb.InventoryItemRequest {
+        return try Pb.InventoryItemRequest.Builder().mergeFrom(inputStream: inputStream).build()
+    }
+    public class func parseFrom(inputStream: InputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemRequest {
+        return try Pb.InventoryItemRequest.Builder().mergeFrom(inputStream: inputStream, extensionRegistry:extensionRegistry).build()
+    }
+    public class func parseFrom(codedInputStream: CodedInputStream) throws -> Pb.InventoryItemRequest {
+        return try Pb.InventoryItemRequest.Builder().mergeFrom(codedInputStream: codedInputStream).build()
+    }
+    public class func parseFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemRequest {
+        return try Pb.InventoryItemRequest.Builder().mergeFrom(codedInputStream: codedInputStream, extensionRegistry:extensionRegistry).build()
+    }
+    public subscript(key: String) -> Any? {
+        switch key {
+        case "hash": return self.hash
+        default: return nil
+        }
+    }
+}
+extension Pb.InventoryItemRequest.Builder: GeneratedMessageBuilderProtocol {
+    public typealias GeneratedMessageType = Pb.InventoryItemRequest
+    public subscript(key: String) -> Any? {
+        get { 
+            switch key {
+            case "hash": return self.hash
+            default: return nil
+            }
+        }
+        set (newSubscriptValue) { 
+            switch key {
+            case "hash":
+                guard let newSubscriptValue = newSubscriptValue as? Array<String> else {
+                    return
+                }
+                self.hash = newSubscriptValue
+            default: return
+            }
+        }
+    }
+}
+extension Pb.InventoryItemResponse: GeneratedMessageProtocol {
+    public class func parseArrayDelimitedFrom(inputStream: InputStream) throws -> Array<Pb.InventoryItemResponse> {
+        var mergedArray = Array<Pb.InventoryItemResponse>()
+        while let value = try parseDelimitedFrom(inputStream: inputStream) {
+          mergedArray.append(value)
+        }
+        return mergedArray
+    }
+    public class func parseDelimitedFrom(inputStream: InputStream) throws -> Pb.InventoryItemResponse? {
+        return try Pb.InventoryItemResponse.Builder().mergeDelimitedFrom(inputStream: inputStream)?.build()
+    }
+    public class func parseFrom(data: Data) throws -> Pb.InventoryItemResponse {
+        return try Pb.InventoryItemResponse.Builder().mergeFrom(data: data, extensionRegistry:Pb.ProtocolRoot.default.extensionRegistry).build()
+    }
+    public class func parseFrom(data: Data, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemResponse {
+        return try Pb.InventoryItemResponse.Builder().mergeFrom(data: data, extensionRegistry:extensionRegistry).build()
+    }
+    public class func parseFrom(inputStream: InputStream) throws -> Pb.InventoryItemResponse {
+        return try Pb.InventoryItemResponse.Builder().mergeFrom(inputStream: inputStream).build()
+    }
+    public class func parseFrom(inputStream: InputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemResponse {
+        return try Pb.InventoryItemResponse.Builder().mergeFrom(inputStream: inputStream, extensionRegistry:extensionRegistry).build()
+    }
+    public class func parseFrom(codedInputStream: CodedInputStream) throws -> Pb.InventoryItemResponse {
+        return try Pb.InventoryItemResponse.Builder().mergeFrom(codedInputStream: codedInputStream).build()
+    }
+    public class func parseFrom(codedInputStream: CodedInputStream, extensionRegistry:ExtensionRegistry) throws -> Pb.InventoryItemResponse {
+        return try Pb.InventoryItemResponse.Builder().mergeFrom(codedInputStream: codedInputStream, extensionRegistry:extensionRegistry).build()
+    }
+    public subscript(key: String) -> Any? {
+        switch key {
+        case "from": return self.from
+        case "data": return self.data
+        default: return nil
+        }
+    }
+}
+extension Pb.InventoryItemResponse.Builder: GeneratedMessageBuilderProtocol {
+    public typealias GeneratedMessageType = Pb.InventoryItemResponse
+    public subscript(key: String) -> Any? {
+        get { 
+            switch key {
+            case "from": return self.from
+            case "data": return self.data
+            default: return nil
+            }
+        }
+        set (newSubscriptValue) { 
+            switch key {
+            case "from":
+                guard let newSubscriptValue = newSubscriptValue as? String else {
+                    return
+                }
+                self.from = newSubscriptValue
+            case "data":
+                guard let newSubscriptValue = newSubscriptValue as? String else {
+                    return
+                }
+                self.data = newSubscriptValue
+            default: return
+            }
+        }
+    }
+}
 extension Pb.Message: GeneratedMessageProtocol {
     public class func parseArrayDelimitedFrom(inputStream: InputStream) throws -> Array<Pb.Message> {
         var mergedArray = Array<Pb.Message>()
@@ -1146,8 +1545,9 @@ extension Pb.Message: GeneratedMessageProtocol {
     public subscript(key: String) -> Any? {
         switch key {
         case "version": return self.version
-        case "inventoryItem": return self.inventoryItem
         case "inventory": return self.inventory
+        case "inventoryRequest": return self.inventoryRequest
+        case "inventoryResponse": return self.inventoryResponse
         default: return nil
         }
     }
@@ -1158,8 +1558,9 @@ extension Pb.Message.Builder: GeneratedMessageBuilderProtocol {
         get { 
             switch key {
             case "version": return self.version
-            case "inventoryItem": return self.inventoryItem
             case "inventory": return self.inventory
+            case "inventoryRequest": return self.inventoryRequest
+            case "inventoryResponse": return self.inventoryResponse
             default: return nil
             }
         }
@@ -1170,16 +1571,21 @@ extension Pb.Message.Builder: GeneratedMessageBuilderProtocol {
                     return
                 }
                 self.version = newSubscriptValue
-            case "inventoryItem":
-                guard let newSubscriptValue = newSubscriptValue as? Pb.InventoryItem else {
-                    return
-                }
-                self.inventoryItem = newSubscriptValue
             case "inventory":
                 guard let newSubscriptValue = newSubscriptValue as? Pb.Inventory else {
                     return
                 }
                 self.inventory = newSubscriptValue
+            case "inventoryRequest":
+                guard let newSubscriptValue = newSubscriptValue as? Pb.InventoryItemRequest else {
+                    return
+                }
+                self.inventoryRequest = newSubscriptValue
+            case "inventoryResponse":
+                guard let newSubscriptValue = newSubscriptValue as? Pb.InventoryItemResponse else {
+                    return
+                }
+                self.inventoryResponse = newSubscriptValue
             default: return
             }
         }

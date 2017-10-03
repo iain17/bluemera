@@ -17,6 +17,7 @@
 		27B462DB1F83EED700B6EF0B /* Pb.Protocol.proto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B462DA1F83EED700B6EF0B /* Pb.Protocol.proto.swift */; };
 		27B462DD1F840D2D00B6EF0B /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B462DC1F840D2D00B6EF0B /* Peer.swift */; };
 		27B462DF1F84103800B6EF0B /* PeerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B462DE1F84103800B6EF0B /* PeerDelegate.swift */; };
+		27B462E11F84250600B6EF0B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B462E01F84250600B6EF0B /* Image.swift */; };
 		5B1B917A1F7FB65200D4818B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1B91791F7FB65200D4818B /* AppDelegate.swift */; };
 		5B1B917F1F7FB65200D4818B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B1B917D1F7FB65200D4818B /* Main.storyboard */; };
 		5B1B91811F7FB65200D4818B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B1B91801F7FB65200D4818B /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		27B462DA1F83EED700B6EF0B /* Pb.Protocol.proto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pb.Protocol.proto.swift; sourceTree = "<group>"; };
 		27B462DC1F840D2D00B6EF0B /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		27B462DE1F84103800B6EF0B /* PeerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDelegate.swift; sourceTree = "<group>"; };
+		27B462E01F84250600B6EF0B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		404000C617239BADB9A0A49E /* Pods-Bluemera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluemera.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera.release.xcconfig"; sourceTree = "<group>"; };
 		540E249B1117C4065B61DBE6 /* Pods-Bluemera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bluemera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bluemera/Pods-Bluemera.debug.xcconfig"; sourceTree = "<group>"; };
 		5B1B91761F7FB65200D4818B /* Bluemera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluemera.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,6 +211,7 @@
 				5B1B91791F7FB65200D4818B /* AppDelegate.swift */,
 				5B1B91801F7FB65200D4818B /* Assets.xcassets */,
 				5B1B91821F7FB65200D4818B /* LaunchScreen.storyboard */,
+				27B462E01F84250600B6EF0B /* Image.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				27B462D21F83E27400B6EF0B /* SharedPictureCollectionViewCell.swift in Sources */,
 				27B462CE1F83DD5400B6EF0B /* Crypto.swift in Sources */,
 				27B462DB1F83EED700B6EF0B /* Pb.Protocol.proto.swift in Sources */,
+				27B462E11F84250600B6EF0B /* Image.swift in Sources */,
 				5B1B917A1F7FB65200D4818B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
