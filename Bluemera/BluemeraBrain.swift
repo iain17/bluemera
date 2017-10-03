@@ -48,13 +48,13 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
         try self.peripheral.startWithConfiguration(configuration)
     }
     
-    open func addToInventory(data: Data) {
+    open func addToInventory(data: Data, from: String) {
         let hash = data.MD5()
         if inventory[hash] != nil {
             print("we've already got this image. Thank you!")
             return
         }
-        self.inventory[hash] = Inventory(from: "UNKNOWN", data: data)
+        self.inventory[hash] = Inventory(from: from, data: data)
         self.inventoryIndex.append(hash)
         //Call delegate. Tell them something has changed!
         self.delegate.InventoryChanged()
@@ -139,7 +139,18 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
     
     internal func peripheral(_ peripheral: BKPeripheral, remoteCentralDidConnect remoteCentral: BKRemoteCentral) {
         print("peripheral::connected")
-        self.connected.append(Peer(peer: peripheral, remotePeer: remoteCentral, delegate: self))
+        let peer = Peer(peer: peripheral, remotePeer: remoteCentral, delegate: self)
+        self.connected.append(peer)
+        
+        //Boast to this one device.
+        do {
+            let inventory = try getInventory()
+            peer.sendData(inventory) { data, remoteCentral, error in
+                print(error)
+            }
+        } catch let err {
+            print(err)
+        }
     }
     
     internal func peripheral(_ peripheral: BKPeripheral, remoteCentralDidDisconnect remoteCentral: BKRemoteCentral) {
@@ -168,7 +179,7 @@ class BlueMeraBrain : BKCentralDelegate, BKPeripheralDelegate, BKAvailabilityObs
                 print("Received a inventory response")
                 //TODO: Check if we can do without encoding it.
                 if let imageData = Data(base64Encoded: inventoryRes.data) {
-                    self.addToInventory(data: imageData)
+                    self.addToInventory(data: imageData, from: inventoryRes.from)
                 }
             }
             

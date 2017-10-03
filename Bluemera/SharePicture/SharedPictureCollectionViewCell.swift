@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 class SharedPictureCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
-   
+    @IBOutlet weak var from: UILabel!
+    
     func display(inventory: Inventory) {
         self.image.image = UIImage(data: inventory.data)
+        self.from.text = inventory.from
     }
 }
