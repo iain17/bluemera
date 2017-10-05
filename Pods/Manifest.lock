@@ -1,15 +1,28 @@
 PODS:
   - BluetoothKit (0.4.0)
+  - ProtocolBuffers-Swift (3.0.23)
   - Toaster (2.1.0)
 
 DEPENDENCIES:
   - BluetoothKit (~> 0.4)
+  - ProtocolBuffers-Swift (from `https://github.com/alexeyxo/protobuf-swift.git`, branch `swift4`)
   - Toaster (~> 2.1.0)
+
+EXTERNAL SOURCES:
+  ProtocolBuffers-Swift:
+    :branch: swift4
+    :git: https://github.com/alexeyxo/protobuf-swift.git
+
+CHECKOUT OPTIONS:
+  ProtocolBuffers-Swift:
+    :commit: 67a2ea95204a433207af89435a4f74039af2b780
+    :git: https://github.com/alexeyxo/protobuf-swift.git
 
 SPEC CHECKSUMS:
   BluetoothKit: 00e189e01ba765e2689c46fbd8d0ede62984441b
+  ProtocolBuffers-Swift: 978d43abf9bb6ca6b0dffcb5767002c645801dfe
   Toaster: 8c3225dc465bef4aa57e147a288724576df8e439
 
-PODFILE CHECKSUM: aa2c1dee55d886658284b91669174e98a3cec009
+PODFILE CHECKSUM: 7d2984580c111a7e7c49baea00850aa655f838e2
 
 COCOAPODS: 1.3.1
